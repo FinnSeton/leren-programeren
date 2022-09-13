@@ -25,7 +25,7 @@ getal2 = 2.1
 #getal 
 #int = een gatal zonder komma
 x = 6
-
+naam = (input("Naam: "))
 #float = is een getal met kommas
 
 y = 69,420

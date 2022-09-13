@@ -6,7 +6,7 @@ boter = 1.5
 
 x = int(input("Hoeveel Pannekoeken wil je maken: "))
 
-print(f"Dit is het Receptvoor:" + int x )
+print("Recept:")
 print(f'{x * bloem} Gram Bloem')
 print(f'{x * melk} ML Melk')
 print(f'{x * ei} Eieren')
