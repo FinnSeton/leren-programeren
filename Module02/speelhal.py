@@ -1,9 +1,18 @@
-ticketprice = 7.45
-VRperfivemin = 0.37
-totaal = ticketprice * 3 + VRperfivemin * 9 * 3
 
+
+
+aantaltickets = float(input("Hoeveel tickets wil je: "))
+VRtijd = float(input("Hoelang wil je VR doen: "))
+
+ticketprice = 7.45
+VRpermin = 0.074
+rond = round(VRpermin * VRtijd * aantaltickets)
+totaal = rond + ticketprice * aantaltickets
+
+print('')
 print('Totaal Kosten uitje')
-print(f'Toegang koste zijn { ticketprice * 3 } Euro')
-print(f'VIP-VR-GameSeat koste zijn { VRperfivemin * 9 * 3 } Euro')
+print('')
+print(f'Toegang koste zijn { ticketprice * aantaltickets } Euro')
+print(f'VIP-VR-GameSeat koste zijn { (rond) } Euro')
 print('')
 print(f'Dit geweldige dagje-uit met 4 mensen in de Speelhal met 45 minuten VR kost je maar {totaal} euro')

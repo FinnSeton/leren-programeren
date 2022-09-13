@@ -1,14 +1,24 @@
-croissantpp = 0.39
-stokbroodpp = 2.78
-kortingsbon = 0.50
-totaal = croissantpp * 17+stokbroodpp * 2-kortingsbon * 3
+# Variables
+############################################################
+croissantpp = float(0.39)
+stokbroodpp = float(2.78)
+kortingsbon = float(0.50)
+#############################################################
+croissant = float(input("Hoeveel Croissantjes wil je "))
+stokbrood = float(input("Hoeveel Stokbrooden wil je "))
+kortingscodes = float(input("Hoeveel Kortingscodes heb je "))
+#############################################################
+#Berekeningen
+croissantberekening = croissantpp * croissant
+stokbroodberekening = stokbroodpp * stokbrood
+totaal = croissantberekening + stokbroodberekening - kortingsbon * kortingscodes
 
-print('Berekening kosten')
-print(' ')
-print(f'17 Croissantjes kosten { croissantpp * 17 } Euro')
-print(f'2 Stokbrooden kosten { stokbroodpp * 2 } Euro')
-print(' ')
-print(f'Totaal bespaard geld met de Kortingsbonnen { kortingsbon * 3 } Euro')
-print(' ')
-print(f'De feestlunch kost je bij de bakker 10.69 euro voor de 17 croissantjes en de 2 stokbroden')
-print(f' als de 3 kortingsbonnen nog geldig zijn!')
+print(f"|--------------------------| ")
+print("|        Berekening        |")
+print(f"|                          | ")
+print(f"|  Croissantjes: {(croissantberekening)} euro | ")
+print(f"|    Stokbrood: {(stokbroodberekening)} euro | ")
+print(f"|--------------------------| ")
+print(f"|  Kortingscodes: {( kortingsbon * kortingscodes )} euro | ")
+print(f"|       Totaal: {(totaal)} euro | ")
+print(f"|--------------------------| ")
