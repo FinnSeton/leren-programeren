@@ -1,10 +1,15 @@
-Max = int(input("Max waarde "))
-Min = int(input("Min waarde "))
+a = input('A: voer een getal in:')
+b = input('B: voer een getal in:')
 
-if Max > Min :
-    print ("Max meer waard")
-elif Max < Min:
-    print("Min is meer waard dan Max")
+if a > b: 
+    max=a
+    min=b
+    print(max, 'is groter dan', min)
+
+elif a < b:
+    min = a
+    max = b
+    print(min ,'is kleiner dan', max)
+
 else :
-    print("Max en Min zijn gelijk aan elkaar")
-print(f"Het minimum is {Min} Het maximum is {Max}")
+    print(a, 'is gelijk aan' ,b)
