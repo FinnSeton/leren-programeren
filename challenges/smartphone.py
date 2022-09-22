@@ -10,9 +10,13 @@ elif iphone13 < SamsungGS22:
     print(
         f"De Samsung Galaxy S22 is het duurst, de telefoon kost:{SamsungGS22} Euro ")
     print(f"De Iphone 13 is het goedkoopst, de telefoon kost: {iphone13} Euro")
-if berekening > 50:
-    print(
+
+if iphone13 < 900 or SamsungGS22 < 900:
+    if berekening > 50:
+        print(
         f"Het advies is dus de Samsung Galaxy S22 te kopen. Deze is namelijk {berekening} goedkoper / duurder dan de Iphone 13")
-else:
-    print(
+    else:
+        print(
         f"Het advies is dus de Iphone 13 te kopen. Deze is namelijk {berekening} euro goedkoper / duurder dan de Samsung Galaxy S22")
+elif iphone13 > 900 or SamsungGS22 > 900:#fix deze lijn
+    print ("Het advies is dus geen telefoon te kopen, ze zijn te duur.")
