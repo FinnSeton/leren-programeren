@@ -22,6 +22,6 @@ vrachtwagenrijbewijs = str(input("Bent u in bezit van een vrachtwagen rijbewijs?
 certificaat = str(input("Heeft u een certificaat voor overleven met gevaarlijk personeel? "))
 
 if lengte < int("150") or gewicht < int("90") or praktijkervaringdieren < int("4") or hoed == ("nee") or praktijkervaringjongleren < ("5") or praktijkervaringacrobatiek < ("3") or diploma != ("4") or vrachtwagenrijbewijs != ("ja") or haar1 != ("ja") or haar2 != ("ja") or haar3 < ("20") or snor < ("10") or certificaat != ("ja"): 
-    print("afgewezen")  
+    print("Uw solicitatie is afgewezen probeer het later opnieuw.")  
 elif lengte > int("150") or gewicht > int("90") or praktijkervaringdieren > int("4") or hoed != ("nee") or praktijkervaringjongleren > ("5") or praktijkervaringacrobatiek > ("3") or diploma == ("4") or vrachtwagenrijbewijs == ("ja") or haar1 == ("ja") or haar2 == ("ja") or haar3 > ("20") or snor > ("10") or certificaat == ("ja"): 
-    print("Goedgekeurt Stuur snel je CV op ")
+    print("Goedgekeurt Stuur snel je CV op.")
