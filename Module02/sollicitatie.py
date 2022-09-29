@@ -1,27 +1,28 @@
-naam = input("Wat is u naam? ")
-gender = input("Man/Vrouw/Anders ").lower
-if gender == ("man"):
-    snor = input("Hoe breed is jou snor in cm? ")
-if gender == ("vrouw"):
-    haar1 = input("Heb jij rood gekleurd haar Ja/Nee ").lower
-    haar2 = input("Heb jij gekruld haar Ja/Nee ").lower
-    haar3 = input("Hoelang is je haar ")
-if gender == ("anders"):
-    print ("Hier doen we dus precies niks mee (;")
-pronounce = input("Pronounce ")
-input("als je 13 bent paars of slavink ")
-lengte = int(input("Hoe lang bent u in hele cm? "))
-gewicht = int(input("Wat is uw lichaams gewicht in hele kg? "))
-hoed = str(input("Heeft u een hoge hoed? Ja/Nee ")).lower
-input("wat is je favoriete kaas Brie/Gouda/Oud/Jong/Blauw/Paars/Furry/Femboy/Auto/Boeing747/Mustang/Duikboot Dan").lower
-praktijkervaringdieren = int(input("Hoeveel jaar pratijk ervaring met dieren-dressuur heeft u? "))
-praktijkervaringjongleren = int(input("Hoeveel jaar heeft u met jongleren? "))
-praktijkervaringacrobatiek = int(input("Hoeveel jaar pratijk ervaring heeft u met acrobatek? "))
-diploma = str(input("Welke MBO Diploma heeft u? 1/2/3/4 "))
-vrachtwagenrijbewijs = str(input("Bent u in bezit van een vrachtwagen rijbewijs? Ja/Nee ")).lower
-certificaat = str(input("Heeft u een certificaat voor overleven met gevaarlijk personeel? Ja/Nee ")).lower
+Naam = input('Wat is uw naam?')
+Gender = input('Wat is uw gender? ').lower
+if Gender ==  ('man'):
+    snor1 = input('Heeft u een snor? ').lower
+    if snor1 == 'ja':
+        snor2 = int(input('Hoe breed is je snor in cm? '))
+if Gender == ('vrouw'):
+    Kapsel1 = input('Wat voor soort haar heeft u? ')
+    Kapsel2 = input('Wat voor kleur haar heeft u? ')
+    Kapsel3 = int(input('Hoelang is uw haar in cm? '))
+hoed = input("Heeft u een hoge hoed? ").lower
+Rijbewijs = input("heeft u een geldig vrachtwagenbewijs? ").lower
+lengte = int(input("Hoelang bent u? "))
+gewicht = int(input('Hoeveel weegt u? '))
+MBO = input('Bent u in bezit van een Diploma MBO-4? ')
+Certificaat = input('Heeft Certificaat Overleven met gevaarlijk personeel? ').lower
+Dieren_dressuur = int(input('Hoeveel jaar praktijkervaring heeft u met dieren-dressuur? '))
+jongleren = int(input('Hoeveel jaar ervaring heeft u met jongleren? '))
+acrobatiek = int(input('Hoeveel jaar praktijkervaring heeft u met acrobatiek? '))
+brie = input('Houd u van een lekker crackertje met brie? ').lower
+opa = input('Houd u van uw opa? ')
+vrienden = int(input('hoeveel vrienden heeft u? '))
+familie = int(input('Hoeveel broertjes/zusjes heeft u? '))
 
-if lengte < int("150") or gewicht < int("90") or praktijkervaringdieren < int("4") or hoed == ("nee") or praktijkervaringjongleren < ("5") or praktijkervaringacrobatiek < ("3") or diploma != ("4") or vrachtwagenrijbewijs != ("ja") or haar1 != ("ja") or haar2 != ("ja") or haar3 < ("20") or snor < ("10") or certificaat != ("ja"): 
-    print("Uw solicitatie is afgewezen probeer het later opnieuw.")  
-elif lengte > int("150") or gewicht > int("90") or praktijkervaringdieren > int("4") or hoed != ("nee") or praktijkervaringjongleren > ("5") or praktijkervaringacrobatiek > ("3") or diploma == ("4") or vrachtwagenrijbewijs == ("ja") or haar1 == ("ja") or haar2 == ("ja") or haar3 > ("20") or snor > ("10") or certificaat == ("ja"): 
-    print("Goedgekeurt Stuur snel je CV op.")
+if (Gender == 'man') or(Gender == 'vrouw' and Kapsel1 == 'krullen' and Kapsel2 == 'rood' and Kapsel3 >= 20) and  hoed == 'ja' and Rijbewijs == 'ja' and lengte >= 150 and gewicht >= 90 and MBO == 'ja' and Certificaat == 'ja' and Dieren_dressuur >= 4 or jongleren >= 5 or acrobatiek >= 3 and brie == 'ja' and opa == 'nee' and vrienden >= 4 and familie >= 1:
+    print('Je bent goedgekeurd')
+else:
+    print('Je hebt de sollicitaie is fout ingevuld probeer het later opnieuw.')
