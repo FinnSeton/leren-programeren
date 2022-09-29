@@ -16,15 +16,15 @@ if answer == "ja":
 
 
 elif answer == "nee": 
-    answer = input("Heeft de kaasblauweschimmel?: ").lower  
+    answer = input("Heeft de kaasblauweschimmel?: ").lower()  
     if answer == "ja": 
-        answer = input("Heeft de kaas een korst?: ").lower  
+        answer = input("Heeft de kaas een korst?: ").lower()  
         if answer == "ja": 
             print("Blue de Rochbaron")
         elif answer == "nee": 
             print("Foume d'Ambert")
     elif answer == "nee": 
-        answer = input("Heeft de kaaseen korst?: ").lower  
+        answer = input("Heeft de kaaseen korst?: ").lower()  
         if answer == "ja": 
             print("Camembert")
         elif answer == "nee": 
