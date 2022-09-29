@@ -26,6 +26,10 @@ elif answer == "nee":
     elif answer == "nee": 
         answer = input("Heeft de kaaseen korst?: ").lower()  
         if answer == "ja": 
-            print("Camembert")
+            geur = input("Stinkt de kaas?: ").lower()
+            if geur == "ja":
+                print("Camembert")
+            elif geur == "nee":
+                print("Brie")
         elif answer == "nee": 
             print("Mozzarella")
