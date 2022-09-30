@@ -17,7 +17,7 @@ gewicht = int(input('Hoeveel weegt u? '))
 if gewicht >= 200 :
     raise NameError ('U bent te zwaar om door te gaan het gebouw zou instorten')
 MBO = input('Bent u in bezit van een Diploma MBO-4? ')
-if mbo <= 4:
+if MBO <= 4:
     raise NameError('We zijn geen jostiband hier dumbass')
 Certificaat = input('Heeft Certificaat Overleven met gevaarlijk personeel? ').lower
 Dieren_dressuur = int(input('Hoeveel jaar praktijkervaring heeft u met dieren-dressuur? '))
