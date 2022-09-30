@@ -1,6 +1,9 @@
-smallpizza = int(input("Hoeveel Small Pizza's wil je: "))
-mediumpizza = int(input("Hoeveel Medium Pizza's wil je: "))
-largepizza = int(input("Hoeveel Large Pizza's wil je: "))
+try:
+    smallpizza = int(input("Hoeveel Small Pizza's wil je: "))
+    mediumpizza = int(input("Hoeveel Medium Pizza's wil je: "))
+    largepizza = int(input("Hoeveel Large Pizza's wil je: "))
+except :
+    print("Dat is geen nummer!")
 #################################################################
 smallpizzaprice = float (7.99)
 mediumpizzaprice = float (11.99)
