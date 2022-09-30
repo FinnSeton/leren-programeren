@@ -1,6 +1,12 @@
 try:
     smallpizza = int(input("Hoeveel Small Pizza's wil je: "))
+except :
+    print("Dat is geen nummer!")
+try:  
     mediumpizza = int(input("Hoeveel Medium Pizza's wil je: "))
+except :
+    print("Dat is geen nummer!")
+try:    
     largepizza = int(input("Hoeveel Large Pizza's wil je: "))
 except :
     print("Dat is geen nummer!")
