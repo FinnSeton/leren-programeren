@@ -172,4 +172,4 @@ print('''
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠛⠛⠛⠛⠿⠿⠛⠛⠛⠉⠁⠀⠀⠀⠀⠀
                                     ---------------------
-                                    Locatie: Boven op de Vulkaan  ''') # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts
+                                    Locatie: Boven op de Vulkaan  ''') # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts ja doe toekomstige Finn
