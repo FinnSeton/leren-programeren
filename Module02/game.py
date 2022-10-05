@@ -7,7 +7,7 @@
 # Als je de end boss verslaat kom je bij een einde van de game. (bijvoorbeeld een portal)
 # Als je de portal in gaat kom je weer terug in de echte wereld. (bijvoorbeeld een kamer met een computer)
 #
-
+import sys
 import random
 
 # MOBS :
@@ -86,6 +86,7 @@ elif input == 'ja':
 while WolfHP >= 0:
     enemydmg = random.randint(5, 10)
     print(f'''
+    _______________________________________________________________________________________
     Battle:
                             {naam} Hp = {PlayerHP}              Wolf Hp = {WolfHP}
 
@@ -105,8 +106,8 @@ while WolfHP >= 0:
     WolfHP = WolfHP - een
     PlayerHP = PlayerHP - enemydmg
     if PlayerHP <= 0:
-        print('Je bent dood')
+        print('Je bent dood gegaan de game is nu afgelopen') 
         sys.exit()
     if WolfHP <= 0:
-        print('je hebt je tegenstander verslagen')
+        print('Je hebt je tegenstander verslagen je kan nu door lopen')
         break
