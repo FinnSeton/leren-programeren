@@ -82,16 +82,16 @@ elif input == 'ja':
         print('Je heb even goed gekeken en je ziet dat het een wolf is')
         print('KUT!!!!!, de wolf heeft je ontdekt je moet nu wel vechten anders ga je dood')
         print('FIGHT!!!!')
-        ###########################################################################
-while WolfHP >= 0:
+##############################################################################################
+while WolfHP >= 0: # battle loop
     enemydmg = random.randint(5, 10)
     print(f'''
     _______________________________________________________________________________________
     Battle:
-                            {naam} Hp = {PlayerHP}              Wolf Hp = {WolfHP}
+                    {naam} Hp = {PlayerHP}            Wolf Hp = {WolfHP}
 
-                            Kies Aub eem van de onderste opties:
-                                {Attacks}          ''')
+                        Kies Aub eem van de onderste opties:
+                            {Attacks}          ''')
 
     attackchoice = input(': ').lower()
     if attackchoice == 'een':
@@ -106,8 +106,9 @@ while WolfHP >= 0:
     WolfHP = WolfHP - een
     PlayerHP = PlayerHP - enemydmg
     if PlayerHP <= 0:
-        print('Je bent dood gegaan de game is nu afgelopen') 
+        input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
         sys.exit()
     if WolfHP <= 0:
         print('Je hebt je tegenstander verslagen je kan nu door lopen')
         break
+#############################################################################################
