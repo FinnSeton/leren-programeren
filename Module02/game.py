@@ -7,8 +7,19 @@
 # Als je de end boss verslaat kom je bij een einde van de game. (bijvoorbeeld een portal)
 # Als je de portal in gaat kom je weer terug in de echte wereld. (bijvoorbeeld een kamer met een computer)
 #
+from multiprocessing.connection import wait
 import sys
 import random
+import os
+import time
+from turtle import clear
+
+
+def clear_console():
+    os.system('cls')
+
+
+clear_console()
 
 # MOBS :
 #
@@ -26,11 +37,13 @@ HornedBeerHP = 150
 DeMoN = 250
 
 print('Welkom tot de wereld van Sword Art Online.')
-# | Done
 input('ENTER om verder te gaan')
+clear_console()
+time.sleep(2)
 print('LINK START!!!!!!!!!!!')
-# | Done
-naam = input("Wat is uw naam")
+time.sleep(1)
+clear_console()
+naam = input("Wat is uw naam: ")
 gender = input('Kies je geslacht: Man/Vrouw: ').lower()
 if gender == 'man':
     gender = 'Mannelijke'
@@ -43,47 +56,57 @@ else:
 # door de input word de klasse gekozen / Done
 klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
 if klasse == 'Warrior':
-    Attacks = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
+    Attack = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
     een = random.randint(10, 20)  # Slash
     twee = random.randint(10, 20)  # Stab
     drie = random.randint(10, 20)  # Punch
 if klasse == 'Mage':
-    Attacks = ['Een: Fireball', 'Twee: Iceball', 'Drie: Lightning']
+    Attack = ['Een: Fireball', 'Twee: Iceball', 'Drie: Lightning']
     een = random.randint(10, 20)  # Fireball
     twee = random.randint(10, 20)  # Iceball
     drie = random.randint(10, 20)  # Lightning
 if klasse == 'Archer':
-    Attacks = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
+    Attack = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
     een = random.randint(10, 20)  # Arrow
     twee = random.randint(10, 20)  # Piercing Arrow
     drie = random.randint(10, 20)  # Explosive Arrow
 ###########################################################################
 print(f'Je bent een {gender} genaamd {naam} en je klasse is een {klasse}')
 ###########################################################################
-print('')
-input = input('Start het spel: Ja/Nee: ').lower()
-if input == 'nee':
+time.sleep(5)
+clear_console()
+start = input('Start het spel: Ja/Nee: ').lower()
+if start == 'nee':
     print('Het spel is gestopt')
     raise sys.exit()
-elif input == 'ja':
+
+elif start == 'ja':
     print('Het spel is gestart')
     print('')
+    time.sleep(1)
     print('Je bent wakker geworden in een vreemde wereld.')
+    time.sleep(2)
     print('Naast je ligt een tas, je opent de tas er zitten wapens in. ')
+    time.sleep(2)
     print('Het enige wat je ziet is een weg met aan het einde een kruispunt.')
-    print('Je loopt naar het kruispunt je hebt 2 opties')
-    # moet nog een rechts elif krijgen
-    kruispunt = input('Ga je naar links of rechts: Links/Rechts: ').lower()
-    if kruispunt == 'links':
-        print('Je gaat naar links')
-        print('Je komt een wild dier tegen')
-        # moet nog een aanvallen elif krijgen
-        print('je doet je best om het dier te indentificeren')
-        print('Je heb even goed gekeken en je ziet dat het een wolf is')
-        print('KUT!!!!!, de wolf heeft je ontdekt je moet nu wel vechten anders ga je dood')
-        print('FIGHT!!!!')
+    time.sleep(2)
+    print('Je loopt naar het kruispunt je hebt 2 opties rechts zie je 3 Gehoornde beren ')
+    time.sleep(2)
+    print('Je gaat naar links')
+    time.sleep(2)
+    print('Je komt een wild dier tegen')
+    time.sleep(2)
+    # moet nog een aanvallen elif krijgen
+    print('je doet je best om het dier te indentificeren')
+    time.sleep(2)
+    print('Je heb even goed gekeken en je ziet dat het een wolf is')
+    time.sleep(2)
+    print('KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood')
+    time.sleep(2)
+    print('FIGHT!!!!')
 ##############################################################################################
-while WolfHP >= 0: # battle loop
+while WolfHP >= 0:  # battle loop
+    clear_console()
     enemydmg = random.randint(5, 10)
     print(f'''
     _______________________________________________________________________________________
@@ -91,18 +114,9 @@ while WolfHP >= 0: # battle loop
                     {naam} Hp = {PlayerHP}            Wolf Hp = {WolfHP}
 
                         Kies Aub eem van de onderste opties:
-                            {Attacks}          ''')
+                            {Attack}          ''')
 
     attackchoice = input(': ').lower()
-    if attackchoice == 'een':
-        print(f'{naam} heeft {een} Damage gedaan')
-        print(f'Wolf heeft {enemydmg} Damage gedaan')
-    elif attackchoice == 'twee':
-        print(f'{naam} heeft {twee} Damage gedaan')
-        print(f'Wolf heeft {enemydmg} Damage gedaan')
-    elif attackchoice == 'drie':
-        print(f'{naam} heeft {drie} Damage gedaan')
-        print(f'Wolf heeft {enemydmg} Damage gedaan')
     WolfHP = WolfHP - een
     PlayerHP = PlayerHP - enemydmg
     if PlayerHP <= 0:
@@ -112,3 +126,6 @@ while WolfHP >= 0: # battle loop
         print('Je hebt je tegenstander verslagen je kan nu door lopen')
         break
 #############################################################################################
+clear_console()
+time.sleep(4)
+input('')
