@@ -35,6 +35,7 @@ WolfHP = 75
 GreenGoblinHP = 100
 HornedBeerHP = 150
 DeMoN = 250
+#-------------------#
 
 print('Welkom tot de wereld van Sword Art Online.')
 input('ENTER om verder te gaan')
@@ -53,7 +54,6 @@ else:
     print('Je hebt geen geldige keuze gemaakt')
     sys.exit()
 ###########################################################################
-# door de input word de klasse gekozen / Done
 klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
 if klasse == 'Warrior':
     Attack = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
@@ -79,29 +79,26 @@ start = input('Start het spel: Ja/Nee: ').lower()
 if start == 'nee':
     print('Het spel is gestopt')
     raise sys.exit()
-
+###########################################################################
 elif start == 'ja':
-    print('Het spel is gestart')
+    print('Het spel is gestart.')
     print('')
     time.sleep(1)
     print('Je bent wakker geworden in een vreemde wereld.')
     time.sleep(2)
     print('Naast je ligt een tas, je opent de tas er zitten wapens in. ')
     time.sleep(2)
-    print('Het enige wat je ziet is een weg met aan het einde een kruispunt.')
+    print('Het enige wat je ziet is een weg.')
     time.sleep(2)
-    print('Je loopt naar het kruispunt je hebt 2 opties rechts zie je 3 Gehoornde beren ')
+    print('Je loop de weg af todat, o Nee.')
     time.sleep(2)
-    print('Je gaat naar links')
+    print('Je komt een wild dier tegen.')
     time.sleep(2)
-    print('Je komt een wild dier tegen')
+    print('Je doet je best om het dier te indentificeren.')
     time.sleep(2)
-    # moet nog een aanvallen elif krijgen
-    print('je doet je best om het dier te indentificeren')
+    print('Je heb even goed gekeken en je ziet dat het een wolf is.')
     time.sleep(2)
-    print('Je heb even goed gekeken en je ziet dat het een wolf is')
-    time.sleep(2)
-    print('KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood')
+    print('KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood.')
     time.sleep(2)
     print('FIGHT!!!!')
 ##############################################################################################
@@ -113,12 +110,21 @@ while WolfHP >= 0:  # battle loop
     Battle:
                     {naam} Hp = {PlayerHP}            Wolf Hp = {WolfHP}
 
-                        Kies Aub eem van de onderste opties:
+                        Kies Aub eem van de onderste opties: Een/Twee/Drie
                             {Attack}          ''')
 
+
     attackchoice = input(': ').lower()
-    WolfHP = WolfHP - een
-    PlayerHP = PlayerHP - enemydmg
+    if attackchoice == 'een':
+        WolfHP = WolfHP - een
+        PlayerHP = PlayerHP - enemydmg
+    elif attackchoice == 'twee':
+        WolfHP = WolfHP - twee
+        PlayerHP = PlayerHP - enemydmg
+    elif attackchoice == 'drie':
+        WolfHP = WolfHP - drie
+        PlayerHP = PlayerHP - enemydmg
+    
     if PlayerHP <= 0:
         input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
         sys.exit()
@@ -126,6 +132,44 @@ while WolfHP >= 0:  # battle loop
         print('Je hebt je tegenstander verslagen je kan nu door lopen')
         break
 #############################################################################################
-clear_console()
 time.sleep(4)
-input('')
+clear_console()
+print('Je loop dooren voor je zie je een berg')
+time.sleep(1)
+print('Nee WACHT "Shock Face"')
+time.sleep(1)
+print('Het is een Vulkaan, Shit ik moet weg hier')
+time.sleep(1)
+print('Je draait om en gaat via een bos pad terug')
+time.sleep(1)
+print('Je ziet een soort bos huisje met allemaal posters')
+time.sleep(1)
+input('Klik ENTER om op de poster te kijken')
+time.sleep(1)
+print('''
+                    Bounty
+             -----------------------
+            Award: 420000 Goud Stukken
+     ⠀⠀⠀⠀⠀⠀ ⢀⣠⣤⣤⣤⣴⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣦⣤⣤⣤⣀⣄⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⢿⣟⣛⣭⡽⠶⠶⠶⠮⠭⠭⣭⣭⣭⣭⣭⣭⣭⣿⣿⣯⣭⣥⣄⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣰⣿⣿⣿⣿⢟⣫⣶⠿⣫⣭⣶⠿⠿⣿⣿⣿⠿⢿⣷⣶⣮⣭⣭⣭⣭⣭⣷⣶⣶⣶⣾⣽⣿⣷⣦⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⣸⣿⣿⣿⣫⣾⣟⣩⣞⣫⣵⣿⣿⣿⣿⣿⣿⣿⣯⢻⣿⣿⣿⣿⣿⣿⢻⣿⣿⣿⣿⣶⣍⡻⣿⣿⣿⣷⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣵⣿⡿⠿⠛⠛⠛⠛⠿⣿⣿⣿⡇⣿⣿⣿⣿⣿⣣⣿⣿⣿⣿⠿⢿⣿⣷⣼⣿⣿⣿⣇⠀⠀⠀⠀
+⠀⠀⠀⠀⢀⣚⣯⣽⣿⣿⣿⣿⢻⣿⣏⡅⠀⠀⠀⠀⠀⠠⣿⣷⣯⡛⣿⣿⣿⣿⣿⣿⡿⠟⠉⠁⠐⣿⣿⣶⣽⣿⣟⣛⡻⠿⣦⡀⠀⠀
+⠀⢀⣴⣞⣯⣷⠶⣒⣛⣛⡻⢿⣷⣿⣷⣾⣶⣾⢟⣿⣿⣿⣶⣯⣟⣫⣿⣿⣿⣿⣿⣍⠀⣀⣤⣤⣬⣭⣽⣿⣿⣿⣿⣿⣿⣟⢶⡝⣦⠀
+⠀⣿⡿⣾⣿⣵⣿⣿⣿⣿⣿⣷⣾⣭⣽⣿⣭⣵⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢸⣿⣿⣿⣿⣿⡿⠿⢟⣫⣭⣭⣽⣿⣷⣿⢸⠀
+⠀⣿⡇⣿⣿⣿⡿⠿⢟⣴⣬⣛⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣿⣿⣿⣿⣿⣷⣝⣛⢿⣿⣿⣿⣿⣿⣿⡟⣿⣿⣿⢟⣿⢸⠀
+⠀⢿⣧⣿⣿⣿⣿⣿⣧⢻⣿⣿⣿⣷⣮⢙⡻⠿⣿⣿⣯⣭⣾⡇⣿⣿⣟⣭⣻⣿⣿⣿⣿⣿⡿⣸⣿⠿⢿⣿⣿⡿⡁⢹⣿⣷⢿⣱⠇⠀
+⠀⠀⠻⢷⣝⣿⣿⣿⣿⣧⠉⠻⢿⣿⣿⢸⣿⣿⣷⣶⣭⣝⢛⠿⢿⣿⣿⣿⣿⣿⣯⣙⣛⣭⣾⣿⣿⣿⣿⠿⡋⣾⣿⡈⣿⣿⣿⡏⠀⠀
+⠀⠀⠀⠀⠸⣽⣿⣿⣿⣿⣷⡽⣿⣷⣆⢘⠿⣿⣿⣿⣿⣿⢸⣿⣿⣶⣶⣶⡎⣭⣭⣭⣭⡩⣭⣭⣽⣦⣰⣿⣧⢿⣿⡇⣿⣿⣿⠀⠀⠀
+⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣮⣻⣏⣿⣿⣾⣯⣍⠛⠋⠻⢿⣿⣿⣿⣿⡇⣿⣿⣿⣿⡇⣿⣿⣿⣿⡟⣿⠟⠈⠉⠀⣿⣿⡏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠘⣿⣿⣿⣿⣿⣿⣿⣾⡿⣿⣿⣿⣿⣿⢦⣴⣦⣬⣍⡛⠛⠈⠛⠛⠛⠛⠁⠙⠛⠛⠉⠀⠀⠀⠀⢠⡆⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣮⣿⡻⣿⢏⣾⣿⣿⣿⣿⣿⣷⣶⣾⣷⣶⣄⣴⣶⣤⡤⣶⣶⡆⣾⡿⡸⣱⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣷⣝⡻⢶⣽⣻⢿⣿⣷⣭⣝⣻⣿⡿⠿⠿⠏⣿⣿⣿⣿⣿⣿⣿⣿⢿⣿⡿⠱⣿⣃⣵⣿⣿⣿⣧⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⢿⣶⣝⡻⢷⣮⣝⡻⢿⣿⣿⣿⣿⣿⣿⣶⣶⣶⣶⣶⣶⣶⣶⣶⣶⣾⣿⣿⡿⣿⣿⣿⣿⣿⡄⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠿⢷⣮⣝⡻⢿⣷⣮⣭⣛⣻⠿⠿⣿⣶⣶⣶⣶⣿⣿⣿⠿⢿⣛⣽⣾⣿⡿⣹⣿⣿⡇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⢿⣾⣶⣭⣽⣛⣛⠿⠿⠶⢶⣶⣶⣶⣶⡿⠿⠿⢟⣛⣭⣷⣿⣿⣿⣿⠇⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠛⠻⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠉⠉⠉⠛⠛⠛⠛⠿⠿⠛⠛⠛⠉⠁⠀⠀⠀⠀⠀
+                                    ---------------------
+                                    Locatie: Boven op de Vulkaan  ''') # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts
