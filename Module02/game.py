@@ -1,53 +1,62 @@
-from random import random
-import sys, os
+# Het is idee is dat de game een soort parodie is op swordt art online. (is een soort Vr game)
+# De game begin met dat je een avatar moet kiezen. Gender/Class/Name
+# Met elke Class komen ander Weapons.
+# De game zelf begin zo "Je wordt wakker in een vreemde wereld alles wat je ziet is dat je in een bos met een weg aan het einde van de weg zie je een kruispunt. Je kan naar links of rechts gaan. Waar ga je heen?"
+# je kiest of je links of rechts wil gaan en dan krijg je een random event. (bijvoorbeeld een monster)
+# Als je een monster verslaat kan je door naar de volgende naar ongeveer 2 mobs kom je bij de end boss (bijvoorbeeld een demon)
+# Als je de end boss verslaat kom je bij een einde van de game. (bijvoorbeeld een portal)
+# Als je de portal in gaat kom je weer terug in de echte wereld. (bijvoorbeeld een kamer met een computer)
+#
 
-os.system('cls')
+import random
 
 # MOBS :
 #
-#1. Wolf
-#2. Green Goblin
-#3. Slime
-#4. Horned Beer
-#5. Demon | Final Boss
+# 1. Wolf
+# 2. Green Goblin
+# 3. Horned Beer
+# 4. Demon | Final Boss
 
-#HP Variables:
-PlayerHP = 100 
+# HP Variables:
+PlayerHP = 100
 #-------------------#
 WolfHP = 75
 GreenGoblinHP = 100
-SlimeHP = 125
 HornedBeerHP = 150
 DeMoN = 250
 
 print('Welkom tot de wereld van Sword Art Online.')
-########################################################################## | Done
+# | Done
 input('ENTER om verder te gaan')
 print('LINK START!!!!!!!!!!!')
-########################################################################## | Done
+# | Done
 naam = input("Wat is uw naam")
 gender = input('Kies je geslacht: Man/Vrouw: ').lower()
 if gender == 'man':
     gender = 'Mannelijke'
 elif gender == 'vrouw':
     gender = 'Vrouwelijke'
+else:
+    print('Je hebt geen geldige keuze gemaakt')
+    sys.exit()
 ###########################################################################
-klasse = input('Kies je klasse: Warrior/Mage/Archer: ') # door de input word de klasse gekozen / Done
+# door de input word de klasse gekozen / Done
+klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
 if klasse == 'Warrior':
-    Attacks= ['Slash', 'Stab', 'Punch']
-    slash = random.randint(10, 20)
-    stab = random.randint(10, 20)
-    punch = random.randint(10, 20)
-elif klasse == 'Mage':
-    Attacks = ['Fireball', 'Iceball', 'Lightning']
-    fireball = random.randint(10, 20)
-    iceball = random.randint(10, 20)
-    lightning = random.randint(10, 20)
-elif klasse == 'Archer':
-    Attacks = ['Arrow', 'Piercing Arrow', 'Explosive Arrow']
-    arrow = random.randint(10, 20)
-    piercingarrow = random.randint(10, 20)
-    explosivearrow = random.randint(10, 20)
+    Attacks = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
+    een = random.randint(10, 20)  # Slash
+    twee = random.randint(10, 20)  # Stab
+    drie = random.randint(10, 20)  # Punch
+if klasse == 'Mage':
+    Attacks = ['Een: Fireball', 'Twee: Iceball', 'Drie: Lightning']
+    een = random.randint(10, 20)  # Fireball
+    twee = random.randint(10, 20)  # Iceball
+    drie = random.randint(10, 20)  # Lightning
+if klasse == 'Archer':
+    Attacks = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
+    een = random.randint(10, 20)  # Arrow
+    twee = random.randint(10, 20)  # Piercing Arrow
+    drie = random.randint(10, 20)  # Explosive Arrow
 ###########################################################################
 print(f'Je bent een {gender} genaamd {naam} en je klasse is een {klasse}')
 ###########################################################################
@@ -55,48 +64,49 @@ print('')
 input = input('Start het spel: Ja/Nee: ').lower()
 if input == 'nee':
     print('Het spel is gestopt')
-    raise SystemExit
+    raise sys.exit()
 elif input == 'ja':
     print('Het spel is gestart')
     print('')
     print('Je bent wakker geworden in een vreemde wereld.')
-    print('Je bent in een bos beland en je ziet een huisje.')
-    huisje = input('Ga je naar het huisje toe: Ja/Nee: ').lower() # moet nog een nee elif krijgen
-    if huisje == 'ja':
-        print('Je betreed het huisje')
-        keuze1 = input('Je ziet een bar mevrouw en een vreemde man tegen wie ga je praten? Bar mevrouw / Vreemde man: ').lower() # moet nog een nee elif krijgen
-        if keuze1 == 'bar mevrouw':
-            print('Je praat met de bar mevrouw')
-            print('Ze vraagt of je een drankje wilt')
-            drankje = input('Wil je een drankje: Ja/Nee: ').lower() # moet nog een nee elif krijgen
-            if drankje == 'ja':
-                print('Je krijgt een drankje')
-                print('Je voelt je beter')
-                mes =input('je ziet een mes liggen op een van de tafels wil je het Stelen: Ja/Nee: ').lower()
-                if mes == 'ja':
-                    print('Je steelt het mes')
-                    print('Niemand ziet het goedzo')
-                    print('Je loopt naar buiten')
-                elif mes == 'nee':
-                    print('Je loopt naar buiten')
-                print('Je gaat weer verder')
-                print('')
-                print('Je komt een kruispunt tegen')
-                kruispunt = input('Ga je naar links of rechts: Links/Rechts: ').lower() # moet nog een rechts elif krijgen
-                if kruispunt == 'links':
-                    print('Je gaat naar links')
-                    print('Je komt een wild dier tegen')
-                    print('wil jij het dier indentificeren of aanvallen')
-                    print('als je hem indentificeert weet je wat je te vechten staat je hebt wel een kans dat je ondekt wordt') 
-                    input('als je aanvalen kiest heb je het effect van suprise : Identificeren/Aanvallen: ').lower() # moet nog een aanvallen elif krijgen
-                    if input == 'identificeren':
-                        enemy = 'Wolf'
-                        print('Je heb even goed gekeken en je ziet dat het een wolf is')
-                        print('KUT!!!!! de wolf heeft je ontdekt je moet nu wel vechten anders ga je dood')
-                        print('FIGHT!!!!')
-                        print(f'''
-                        {naam} Hp = {PlayerHP}              {enemy} Hp = {WolfHP}
+    print('Naast je ligt een tas, je opent de tas er zitten wapens in. ')
+    print('Het enige wat je ziet is een weg met aan het einde een kruispunt.')
+    print('Je loopt naar het kruispunt je hebt 2 opties')
+    # moet nog een rechts elif krijgen
+    kruispunt = input('Ga je naar links of rechts: Links/Rechts: ').lower()
+    if kruispunt == 'links':
+        print('Je gaat naar links')
+        print('Je komt een wild dier tegen')
+        # moet nog een aanvallen elif krijgen
+        print('je doet je best om het dier te indentificeren')
+        print('Je heb even goed gekeken en je ziet dat het een wolf is')
+        print('KUT!!!!!, de wolf heeft je ontdekt je moet nu wel vechten anders ga je dood')
+        print('FIGHT!!!!')
+        ###########################################################################
+while WolfHP >= 0:
+    enemydmg = random.randint(5, 10)
+    print(f'''
+    Battle:
+                            {naam} Hp = {PlayerHP}              Wolf Hp = {WolfHP}
 
-                        
-                        
-                        ''')
+                            Kies Aub eem van de onderste opties:
+                                {Attacks}          ''')
+
+    attackchoice = input(': ').lower()
+    if attackchoice == 'een':
+        print(f'{naam} heeft {een} Damage gedaan')
+        print(f'Wolf heeft {enemydmg} Damage gedaan')
+    elif attackchoice == 'twee':
+        print(f'{naam} heeft {twee} Damage gedaan')
+        print(f'Wolf heeft {enemydmg} Damage gedaan')
+    elif attackchoice == 'drie':
+        print(f'{naam} heeft {drie} Damage gedaan')
+        print(f'Wolf heeft {enemydmg} Damage gedaan')
+    WolfHP = WolfHP - een
+    PlayerHP = PlayerHP - enemydmg
+    if PlayerHP <= 0:
+        print('Je bent dood')
+        sys.exit()
+    if WolfHP <= 0:
+        print('je hebt je tegenstander verslagen')
+        break
