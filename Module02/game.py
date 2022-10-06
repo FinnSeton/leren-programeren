@@ -14,10 +14,8 @@ import os
 import time
 from turtle import clear
 
-
 def clear_console():
     os.system('cls')
-
 
 clear_console()
 
@@ -157,26 +155,45 @@ print('''
 time.sleep(1)
 clear_console()
 print('Je loopt terug richting naar de vulkaan')
+time.sleep(1)
 print('Je staat bij de voet van de vulkaan en je ziet een soort van grot')
+time.sleep(1)
 print('Je loopt naar binnen en je ziet een soort van trap')
+time.sleep(1)
 print('Je loopt de trap op en je ziet een kamer')
+time.sleep(1)
 print('Je loopt naar binnen en je ziet iets bewegen in de andere kamer')
+time.sleep(1)
 print('Ga je het vreemde object aanvallen of ga je weg')
 keuze2 = input('aanvallen/ weg: ').lower()
 if keuze2 == 'aanvallen':
+    time.sleep(1)
     print(f'{naam}: Hey wie ben jij')
+    time.sleep(1)
     print('"Het onbekende mannenetje draait om"')
+    time.sleep(1)
     print('Hij ziet er niet uit als een normale mens')
+    time.sleep(1)
     print('Hij ziet er uit als een soort van goblin')
+    time.sleep(1)
     print(f'{naam}: Wat ben jij?')
+    time.sleep(1)
     print('?: Ik ben Rango de Goblin')
+    time.sleep(1)
     print(f'{naam}: Wat doe je hier?')
+    time.sleep(1)
     print('Rango: Ik ben woon hier wat doe jij hier in godsnaam?')
+    time.sleep(1)
     print(f'{naam}: Ik ben hier om Skynrad te verslaan')
+    time.sleep(1)
     print('Rango: Skynrad?')
+    time.sleep(1)
     print(f'{naam}: Ja Skynrad de Demon')
+    time.sleep(1)
     print(f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
+    time.sleep(1)
     print(f'{naam} Ga dood Goblin')
+    time.sleep(1)
     while GreenGoblinHP >= 0:  # battle loop
         clear_console()
         enemydmg = random.randint(10, 15)
