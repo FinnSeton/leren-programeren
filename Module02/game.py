@@ -1,3 +1,10 @@
+# !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
+# !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
+# !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
+
+
+
+
 # Het is idee is dat de game een soort parodie is op swordt art online. (is een soort Vr game)
 # De game begin met dat je een avatar moet kiezen. Gender/Class/Name
 # Met elke Class komen ander Weapons.
@@ -19,7 +26,7 @@ def clear_console():
     os.system('cls')
 
 
-def printDelay(t: str, d=1):  # function to printDelay with delay
+def printDelay(t: str, d=2):  # function to printDelay with delay
     time.sleep(d)
     print(t)
 
@@ -27,18 +34,15 @@ def printDelay(t: str, d=1):  # function to printDelay with delay
 clear_console()
 
 # MOBS :
-#
 # 1. Wolf                   | Done
 # 2. Green Goblin           | Done
-# 3. Horned Beer            |
-# 4. Demon | Final Boss     |
+# 3. Demon | Final Boss     | Done
 
 # HP Variables:
 PlayerHP = 100
 #-------------------#
 WolfHP = 75
 GreenGoblinHP = 100
-HornedBeerHP = 150
 DeMoNHP = 250
 #-------------------#
 
@@ -77,6 +81,7 @@ if klasse == 'Archer':
     drie = random.randint(10, 20)  # Explosive Arrow
 ###########################################################################
 printDelay(f'Je bent een {gender} {klasse} genaamd {naam} ')
+time.sleep(3)
 ###########################################################################
 clear_console()
 start = input('Start het spel: Ja/Nee: ').lower()
@@ -97,9 +102,11 @@ elif start == 'ja':
     printDelay(
         'KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood.')
     printDelay('FIGHT!!!!')
+    time.sleep(5)
 ##############################################################################################
 while WolfHP >= 0:  # battle loop
     clear_console()
+    PlayerHP = 100
     enemydmg = random.randint(5, 10)
     print(f'''
     _______________________________________________________________________________________
@@ -168,6 +175,7 @@ if keuze2 == 'aanvallen':
     printDelay(f'{naam} Ga dood Goblin')
 ################################################################################################
     while GreenGoblinHP >= 0:  # battle loop
+        PlayerHP = 100
         clear_console()
         enemydmg = random.randint(10, 15)
         print(f'''
@@ -175,17 +183,17 @@ if keuze2 == 'aanvallen':
         Battle:
                         {naam} Hp = {PlayerHP}            Rango de Goblin Hp = {GreenGoblinHP}
 
-                            Kies Aub eem van de onderste opties: Een/Twee/Drie
+                            Kies Aub een van de onderste opties: Een/Twee/Drie
                                 {Attack}          ''')
 
-        attackchoice = input(': ').lower()
-        if attackchoice == 'een':
+        attackchoice2 = input(': ').lower()
+        if attackchoice2 == 'een':
             GreenGoblinHP = GreenGoblinHP - een
             PlayerHP = PlayerHP - enemydmg
-        elif attackchoice == 'twee':
+        elif attackchoice2 == 'twee':
             GreenGoblinHP = GreenGoblinHP - twee
             PlayerHP = PlayerHP - enemydmg
-        elif attackchoice == 'drie':
+        elif attackchoice2 == 'drie':
             GreenGoblinHP = GreenGoblinHP - drie
             PlayerHP = PlayerHP - enemydmg
 
@@ -195,6 +203,7 @@ if keuze2 == 'aanvallen':
         if GreenGoblinHP <= 0:
             print('Je hebt je tegenstander verslagen je kan nu door ')
         break
+################################################################################################
 printDelay('Top die is ook weg')
 printDelay('Je loopt de kamer in en je ziet een soort van trap')
 printDelay('Je loopt de trap op en je beland in een balkon dat over de vulkaan uit kijkt')
@@ -243,5 +252,6 @@ while DeMoNHP >= 0:  # battle loop
             input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
             sys.exit()
         if DeMoNHP <= 0:
-            print('Je hebt je tegenstander verslagen je kan nu door ')
+            print('Je hebt Skynrad verslagen ')
         break
+printDelay('Gefeliciteerd je hebt de game uitgespeeld')
