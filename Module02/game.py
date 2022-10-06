@@ -23,10 +23,10 @@ clear_console()
 
 # MOBS :
 #
-# 1. Wolf
-# 2. Green Goblin
-# 3. Horned Beer
-# 4. Demon | Final Boss
+# 1. Wolf                   | Done
+# 2. Green Goblin           | Done
+# 3. Horned Beer            |
+# 4. Demon | Final Boss     |
 
 # HP Variables:
 PlayerHP = 100
@@ -146,10 +146,64 @@ print('Je ziet een soort bos huisje met allemaal posters')
 time.sleep(1)
 input('Klik ENTER om op de poster te kijken')
 time.sleep(1)
+clear_console()
 print('''
                      BOUNTY
              -----------------------
                   Naam: Skynrad
             Award: 420000 Goud Stukken
               ---------------------
-           Locatie: Boven op de Vulkaan  ''') # vserhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts ja doe toekomstige Finn
+           Locatie: Boven op de Vulkaan  ''') # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts ja
+time.sleep(1)
+clear_console()
+print('Je loopt terug richting naar de vulkaan')
+print('Je staat bij de voet van de vulkaan en je ziet een soort van grot')
+print('Je loopt naar binnen en je ziet een soort van trap')
+print('Je loopt de trap op en je ziet een kamer')
+print('Je loopt naar binnen en je ziet iets bewegen in de andere kamer')
+print('Ga je het vreemde object aanvallen of ga je weg')
+keuze2 = input('aanvallen/ weg: ').lower()
+if keuze2 == 'aanvallen':
+    print(f'{naam}: Hey wie ben jij')
+    print('"Het onbekende mannenetje draait om"')
+    print('Hij ziet er niet uit als een normale mens')
+    print('Hij ziet er uit als een soort van goblin')
+    print(f'{naam}: Wat ben jij?')
+    print('?: Ik ben Rango de Goblin')
+    print(f'{naam}: Wat doe je hier?')
+    print('Rango: Ik ben woon hier wat doe jij hier in godsnaam?')
+    print(f'{naam}: Ik ben hier om Skynrad te verslaan')
+    print('Rango: Skynrad?')
+    print(f'{naam}: Ja Skynrad de Demon')
+    print(f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
+    print(f'{naam} Ga dood Goblin')
+    while GreenGoblinHP >= 0:  # battle loop
+        clear_console()
+        enemydmg = random.randint(10, 15)
+        print(f'''
+        _______________________________________________________________________________________
+        Battle:
+                        {naam} Hp = {PlayerHP}            Rango de Goblin Hp = {GreenGoblinHP}
+
+                            Kies Aub eem van de onderste opties: Een/Twee/Drie
+                                {Attack}          ''')
+
+
+        attackchoice = input(': ').lower()
+        if attackchoice == 'een':
+            GreenGoblinHP = GreenGoblinHP - een
+            PlayerHP = PlayerHP - enemydmg
+        elif attackchoice == 'twee':
+            GreenGoblinHP = GreenGoblinHP - twee
+            PlayerHP = PlayerHP - enemydmg
+        elif attackchoice == 'drie':
+            GreenGoblinHP = GreenGoblinHP - drie
+            PlayerHP = PlayerHP - enemydmg
+        
+        if PlayerHP <= 0:
+            input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
+            sys.exit()
+        if WolfHP <= 0:
+            print('Je hebt je tegenstander verslagen je kan nu door lopen')
+        break
+
