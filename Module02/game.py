@@ -1,6 +1,7 @@
 # !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
 # !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
 # !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
+# add try exepts bij de dingen waar het fout kan gaan
 
 
 
