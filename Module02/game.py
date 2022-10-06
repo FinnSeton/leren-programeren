@@ -14,8 +14,15 @@ import os
 import time
 from turtle import clear
 
+
 def clear_console():
     os.system('cls')
+
+
+def printDelay(t: str, d=1):  # function to printDelay with delay
+    time.sleep(d)
+    print(t)
+
 
 clear_console()
 
@@ -32,15 +39,15 @@ PlayerHP = 100
 WolfHP = 75
 GreenGoblinHP = 100
 HornedBeerHP = 150
-DeMoN = 250
+DeMoNHP = 250
 #-------------------#
 
-print('Welkom tot de wereld van Sword Art Online.')
+printDelay('Welkom tot de wereld van Sword Art Online.')
 input('ENTER om verder te gaan')
 clear_console()
+
+printDelay('LINK START!!!!!!!!!!!')
 time.sleep(2)
-print('LINK START!!!!!!!!!!!')
-time.sleep(1)
 clear_console()
 naam = input("Wat is uw naam: ")
 gender = input('Kies je geslacht: Man/Vrouw: ').lower()
@@ -49,7 +56,7 @@ if gender == 'man':
 elif gender == 'vrouw':
     gender = 'Vrouwelijke'
 else:
-    print('Je hebt geen geldige keuze gemaakt')
+    printDelay('Je hebt geen geldige keuze gemaakt')
     sys.exit()
 ###########################################################################
 klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
@@ -69,36 +76,27 @@ if klasse == 'Archer':
     twee = random.randint(10, 20)  # Piercing Arrow
     drie = random.randint(10, 20)  # Explosive Arrow
 ###########################################################################
-print(f'Je bent een {gender} {klasse} genaamd {naam} ')
+printDelay(f'Je bent een {gender} {klasse} genaamd {naam} ')
 ###########################################################################
-time.sleep(5)
 clear_console()
 start = input('Start het spel: Ja/Nee: ').lower()
 if start == 'nee':
-    print('Het spel is gestopt')
+    printDelay('Het spel is gestopt')
     raise sys.exit()
 ###########################################################################
 elif start == 'ja':
-    print('Het spel is gestart.')
-    print('')
-    time.sleep(1)
-    print('Je bent wakker geworden in een vreemde wereld.')
-    time.sleep(2)
-    print('Naast je ligt een tas, je opent de tas er zitten wapens in. ')
-    time.sleep(2)
-    print('Het enige wat je ziet is een weg.')
-    time.sleep(2)
-    print('Je loop de weg af todat, o Nee.')
-    time.sleep(2)
-    print('Je komt een wild dier tegen.')
-    time.sleep(2)
-    print('Je doet je best om het dier te indentificeren.')
-    time.sleep(2)
-    print('Je heb even goed gekeken en je ziet dat het een wolf is.')
-    time.sleep(2)
-    print('KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood.')
-    time.sleep(2)
-    print('FIGHT!!!!')
+    printDelay('Het spel is gestart.')
+    printDelay('')
+    printDelay('Je bent wakker geworden in een vreemde wereld.')
+    printDelay('Naast je ligt een tas, je opent de tas er zitten wapens in. ')
+    printDelay('Het enige wat je ziet is een weg.')
+    printDelay('Je loop de weg af todat, o Nee.')
+    printDelay('Je komt een wild dier tegen.')
+    printDelay('Je doet je best om het dier te indentificeren.')
+    printDelay('Je heb even goed gekeken en je ziet dat het een wolf is.')
+    printDelay(
+        'KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood.')
+    printDelay('FIGHT!!!!')
 ##############################################################################################
 while WolfHP >= 0:  # battle loop
     clear_console()
@@ -111,7 +109,6 @@ while WolfHP >= 0:  # battle loop
                         Kies Aub eem van de onderste opties: Een/Twee/Drie
                             {Attack}          ''')
 
-
     attackchoice = input(': ').lower()
     if attackchoice == 'een':
         WolfHP = WolfHP - een
@@ -122,7 +119,7 @@ while WolfHP >= 0:  # battle loop
     elif attackchoice == 'drie':
         WolfHP = WolfHP - drie
         PlayerHP = PlayerHP - enemydmg
-    
+
     if PlayerHP <= 0:
         input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
         sys.exit()
@@ -130,70 +127,46 @@ while WolfHP >= 0:  # battle loop
         print('Je hebt je tegenstander verslagen je kan nu door lopen')
         break
 #############################################################################################
-time.sleep(4)
 clear_console()
-print('Je loop dooren voor je zie je een berg')
-time.sleep(1)
-print('Nee WACHT "Shock Face"')
-time.sleep(1)
-print('Het is een Vulkaan, Shit ik moet weg hier')
-time.sleep(1)
-print('Je draait om en gaat via een bos pad terug')
-time.sleep(1)
-print('Je ziet een soort bos huisje met allemaal posters')
-time.sleep(1)
+printDelay('Je loop dooren voor je zie je een berg')
+printDelay('Nee WACHT "Shock Face"')
+printDelay('Het is een Vulkaan, Shit ik moet weg hier')
+printDelay('Je draait om en gaat via een bos pad terug')
+printDelay('Je ziet een soort bos huisje met allemaal posters')
 input('Klik ENTER om op de poster te kijken')
-time.sleep(1)
 clear_console()
-print('''
+printDelay('''
                      BOUNTY
              -----------------------
                   Naam: Skynrad
             Award: 420000 Goud Stukken
               ---------------------
-           Locatie: Boven op de Vulkaan  ''') # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts ja
-time.sleep(1)
+           Locatie: Boven op de Vulkaan  ''')  # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts ja
+############################################################################################
 clear_console()
-print('Je loopt terug richting naar de vulkaan')
-time.sleep(1)
-print('Je staat bij de voet van de vulkaan en je ziet een soort van grot')
-time.sleep(1)
-print('Je loopt naar binnen en je ziet een soort van trap')
-time.sleep(1)
-print('Je loopt de trap op en je ziet een kamer')
-time.sleep(1)
-print('Je loopt naar binnen en je ziet iets bewegen in de andere kamer')
-time.sleep(1)
-print('Ga je het vreemde object aanvallen of ga je weg')
+printDelay('Je loopt terug richting naar de vulkaan')
+printDelay('Je staat bij de voet van de vulkaan en je ziet een soort van grot')
+printDelay('Je loopt naar binnen en je ziet een soort van trap')
+printDelay('Je loopt de trap op en je ziet een kamer')
+printDelay('Je loopt naar binnen en je ziet iets bewegen in de andere kamer')
+printDelay('Ga je het vreemde object aanvallen of ga je weg')
 keuze2 = input('aanvallen/ weg: ').lower()
 if keuze2 == 'aanvallen':
-    time.sleep(1)
-    print(f'{naam}: Hey wie ben jij')
-    time.sleep(1)
-    print('"Het onbekende mannenetje draait om"')
-    time.sleep(1)
-    print('Hij ziet er niet uit als een normale mens')
-    time.sleep(1)
-    print('Hij ziet er uit als een soort van goblin')
-    time.sleep(1)
-    print(f'{naam}: Wat ben jij?')
-    time.sleep(1)
-    print('?: Ik ben Rango de Goblin')
-    time.sleep(1)
-    print(f'{naam}: Wat doe je hier?')
-    time.sleep(1)
-    print('Rango: Ik ben woon hier wat doe jij hier in godsnaam?')
-    time.sleep(1)
-    print(f'{naam}: Ik ben hier om Skynrad te verslaan')
-    time.sleep(1)
-    print('Rango: Skynrad?')
-    time.sleep(1)
-    print(f'{naam}: Ja Skynrad de Demon')
-    time.sleep(1)
-    print(f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
-    time.sleep(1)
-    print(f'{naam} Ga dood Goblin')
-    time.sleep(1)
+    printDelay(f'{naam}: Hey wie ben jij')
+    printDelay('"Het onbekende mannenetje draait om"')
+    printDelay('Hij ziet er niet uit als een normale mens')
+    printDelay('Hij ziet er uit als een soort van goblin')
+    printDelay(f'{naam}: Wat ben jij?')
+    printDelay('?: Ik ben Rango de Goblin')
+    printDelay(f'{naam}: Wat doe je hier?')
+    printDelay('Rango: Ik ben woon hier wat doe jij hier in godsnaam?')
+    printDelay(f'{naam}: Ik ben hier om Skynrad te verslaan')
+    printDelay('Rango: Skynrad?')
+    printDelay(f'{naam}: Ja Skynrad de Demon')
+    printDelay(
+        f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
+    printDelay(f'{naam} Ga dood Goblin')
+################################################################################################
     while GreenGoblinHP >= 0:  # battle loop
         clear_console()
         enemydmg = random.randint(10, 15)
@@ -205,7 +178,6 @@ if keuze2 == 'aanvallen':
                             Kies Aub eem van de onderste opties: Een/Twee/Drie
                                 {Attack}          ''')
 
-
         attackchoice = input(': ').lower()
         if attackchoice == 'een':
             GreenGoblinHP = GreenGoblinHP - een
@@ -216,11 +188,60 @@ if keuze2 == 'aanvallen':
         elif attackchoice == 'drie':
             GreenGoblinHP = GreenGoblinHP - drie
             PlayerHP = PlayerHP - enemydmg
-        
+
         if PlayerHP <= 0:
             input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
             sys.exit()
-        if WolfHP <= 0:
-            print('Je hebt je tegenstander verslagen je kan nu door lopen')
+        if GreenGoblinHP <= 0:
+            print('Je hebt je tegenstander verslagen je kan nu door ')
         break
+printDelay('Top die is ook weg')
+printDelay('Je loopt de kamer in en je ziet een soort van trap')
+printDelay('Je loopt de trap op en je beland in een balkon dat over de vulkaan uit kijkt')
+printDelay('Je ziet een soort van enorme grot')
+printDelay('Er komt een sterke aura uit de grot')
+printDelay('Je zit 2 Rode ogen in de grot')
+printDelay('Je duikt snel weg en gaat terug naar buiten')
+printDelay('Je bent nu weer buiten je gaat verder met het beklimmen van de berg')
+printDelay('Je bent nu boven op de berg gekomen je ziet de ingang van de grote grot')
+printDelay('SKYNRAD!!!!')
+printDelay('Je loopt naar binnen het is donker en in een gaan er allemaal vuur branden')
+printDelay('Je ziet hem staan Skynrad')
+printDelay('Hij ziet er niet uit als een normale mens')
+printDelay('Hij is veel groter net een berg')
+printDelay('Hij ziet er uit als een soort van demon')
+printDelay('Skynrad: Wie ben jij?')
+printDelay(f'{naam}: Ik ben {naam} ik kom hier om jou om te leggen')
+printDelay('Skynrad: Ik ben Skynrad de Demon')
+printDelay('Skynrad: Haha je bent niet sterk genoeg om mij te verslaan')
+printDelay(f'{naam}: Ik ga Jou verslaan al is het de laatste wat ik doe')
+printDelay('Skynrad: Haha kom maar op!!!!!')
+################################################################################################
+while DeMoNHP >= 0:  # battle loop
+        clear_console()
+        enemydmg = random.randint(10, 15)
+        print(f'''
+        _______________________________________________________________________________________
+        Battle:
+                        {naam} Hp = {PlayerHP}            Skynrad de Demon Hp = {DeMoNHP}
 
+                            Kies Aub eem van de onderste opties: Een/Twee/Drie
+                                {Attack}          ''')
+
+        attackchoice = input(': ').lower()
+        if attackchoice == 'een':
+            DeMoNHP = DeMoNHP - een
+            PlayerHP = PlayerHP - enemydmg
+        elif attackchoice == 'twee':
+            DeMoNHP = DeMoNHP - twee
+            PlayerHP = PlayerHP - enemydmg
+        elif attackchoice == 'drie':
+            DeMoNHP = DeMoNHP - drie
+            PlayerHP = PlayerHP - enemydmg
+
+        if PlayerHP <= 0:
+            input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
+            sys.exit()
+        if DeMoNHP <= 0:
+            print('Je hebt je tegenstander verslagen je kan nu door ')
+        break
