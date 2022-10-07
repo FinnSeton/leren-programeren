@@ -90,7 +90,7 @@ try:
         drie = random.randint(7, 16)  # Explosive Arrow
     # # # # # # # # # # # # # # # # # # 
     if klasse == 'debug':
-        Attack = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
+        Attack = ['Een: Dikke bonker', 'Twee: Nuke', 'Drie: Explosive Boem']
         een = random.randint(9999, 99999)  # Arrow
         twee = random.randint(9999, 99999)  # Piercing Arrow
         drie = random.randint(9999, 99999)  # Explosive Arrow
