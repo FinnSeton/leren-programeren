@@ -1,6 +1,4 @@
-# !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
-# !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
-# !!!!!!!!!!!!!!!! 2de en 3de battle is kapot
+
 # add try exepts bij de dingen waar het fout kan gaan
 
 
@@ -31,6 +29,8 @@ def printDelay(t: str, d=2):  # function to printDelay with delay
     time.sleep(d)
     print(t)
 
+specialtxt = "Je hebt geen specials"
+armor = 0
 
 clear_console()
 
@@ -54,32 +54,48 @@ clear_console()
 printDelay('LINK START!!!!!!!!!!!')
 time.sleep(2)
 clear_console()
+###########################################################################
+
+###########################################################################
 naam = input("Wat is uw naam: ")
-gender = input('Kies je geslacht: Man/Vrouw: ').lower()
-if gender == 'man':
-    gender = 'Mannelijke'
-elif gender == 'vrouw':
-    gender = 'Vrouwelijke'
-else:
-    printDelay('Je hebt geen geldige keuze gemaakt')
+try:
+    gender = input('Kies je geslacht: Man/Vrouw: ').lower()
+    if gender == 'man':
+        gender = 'Mannelijke'
+    elif gender == 'vrouw':
+        gender = 'Vrouwelijke'
+    else:
+        printDelay('Je hebt geen geldige keuze gemaakt')
+        sys.exit()
+except:
+    printDelay('Je hebt een fout andwoordt gegeven bij gender')
     sys.exit()
 ###########################################################################
-klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
-if klasse == 'Warrior':
-    Attack = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
-    een = random.randint(10, 20)  # Slash
-    twee = random.randint(10, 20)  # Stab
-    drie = random.randint(10, 20)  # Punch
-if klasse == 'Mage':
-    Attack = ['Een: Fireball', 'Twee: Iceball', 'Drie: Lightning']
-    een = random.randint(10, 20)  # Fireball
-    twee = random.randint(10, 20)  # Iceball
-    drie = random.randint(10, 20)  # Lightning
-if klasse == 'Archer':
-    Attack = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
-    een = random.randint(10, 20)  # Arrow
-    twee = random.randint(10, 20)  # Piercing Arrow
-    drie = random.randint(10, 20)  # Explosive Arrow
+try:
+    klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
+    if klasse == 'Warrior':
+        Attack = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
+        een = random.randint(10, 20)  # Slash
+        twee = random.randint(5, 15)  # Stab
+        drie = random.randint(3, 10)  # Punch
+    if klasse == 'Mage':
+        Attack = ['Een: Fireball', 'Twee: Iceball', 'Drie: Lightning']
+        een = random.randint(7, 20)  # Fireball
+        twee = random.randint(4, 16)  # Iceball
+        drie = random.randint(5, 15)  # Lightning
+    if klasse == 'Archer':
+        Attack = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
+        een = random.randint(8, 17)  # Arrow
+        twee = random.randint(6, 15)  # Piercing Arrow
+        drie = random.randint(7, 16)  # Explosive Arrow
+    # # # # # # # # # # # # # # # # # # 
+    if klasse == 'debug':
+        Attack = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
+        een = random.randint(9999, 99999)  # Arrow
+        twee = random.randint(9999, 99999)  # Piercing Arrow
+        drie = random.randint(9999, 99999)  # Explosive Arrow
+except:
+    printDelay('Je hebt een fout andwoordt gegeven bij klasse')
 ###########################################################################
 printDelay(f'Je bent een {gender} {klasse} genaamd {naam} ')
 time.sleep(3)
@@ -105,10 +121,11 @@ elif start == 'ja':
     printDelay('FIGHT!!!!')
     time.sleep(5)
 ##############################################################################################
+PlayerHP = 100
 while WolfHP >= 0:  # battle loop
+    enemydmg = random.randint(5, 15)
     clear_console()
-    PlayerHP = 100
-    enemydmg = random.randint(5, 10)
+    
     print(f'''
     _______________________________________________________________________________________
     Battle:
@@ -136,20 +153,23 @@ while WolfHP >= 0:  # battle loop
         break
 #############################################################################################
 clear_console()
-printDelay('Je loop dooren voor je zie je een berg')
+printDelay('Je loop door en voor je zie je een berg')
 printDelay('Nee WACHT "Shock Face"')
 printDelay('Het is een Vulkaan, Shit ik moet weg hier')
 printDelay('Je draait om en gaat via een bos pad terug')
 printDelay('Je ziet een soort bos huisje met allemaal posters')
 input('Klik ENTER om op de poster te kijken')
 clear_console()
+
 printDelay('''
                      BOUNTY
              -----------------------
                   Naam: Skynrad
             Award: 420000 Goud Stukken
               ---------------------
-           Locatie: Boven op de Vulkaan  ''')  # verhaal idee is ongveer lord of de rings vibe waar nog 1 boss fight komts ja
+           Locatie: Boven op de Vulkaan  ''')
+printDelay('')
+input('Klik ENTER om verder te gaan')
 ############################################################################################
 clear_console()
 printDelay('Je loopt terug richting naar de vulkaan')
@@ -158,7 +178,8 @@ printDelay('Je loopt naar binnen en je ziet een soort van trap')
 printDelay('Je loopt de trap op en je ziet een kamer')
 printDelay('Je loopt naar binnen en je ziet iets bewegen in de andere kamer')
 printDelay('Ga je het vreemde object aanvallen of ga je weg')
-keuze2 = input('aanvallen/ weg: ').lower()
+keuze2 = input('Aanvallen/Weg: ').lower()
+clear_console()
 if keuze2 == 'aanvallen':
     printDelay(f'{naam}: Hey wie ben jij')
     printDelay('"Het onbekende mannenetje draait om"')
@@ -175,10 +196,11 @@ if keuze2 == 'aanvallen':
         f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
     printDelay(f'{naam} Ga dood Goblin')
 ################################################################################################
+
+    PlayerHP = 100
     while GreenGoblinHP >= 0:  # battle loop
-        PlayerHP = 100
+        enemydmg = random.randint(10, 20)
         clear_console()
-        enemydmg = random.randint(10, 15)
         print(f'''
         _______________________________________________________________________________________
         Battle:
@@ -203,15 +225,33 @@ if keuze2 == 'aanvallen':
             sys.exit()
         if GreenGoblinHP <= 0:
             print('Je hebt je tegenstander verslagen je kan nu door ')
-        break
+            break
 ################################################################################################
-printDelay('Top die is ook weg')
-printDelay('Je loopt de kamer in en je ziet een soort van trap')
-printDelay('Je loopt de trap op en je beland in een balkon dat over de vulkaan uit kijkt')
-printDelay('Je ziet een soort van enorme grot')
-printDelay('Er komt een sterke aura uit de grot')
-printDelay('Je zit 2 Rode ogen in de grot')
-printDelay('Je duikt snel weg en gaat terug naar buiten')
+    printDelay('Top die is ook weg')
+    printDelay('Je loopt de kamer in en je ziet een soort van trap')
+    printDelay('Je loopt de trap op en je beland in een balkon dat over de vulkaan uit kijkt')
+    printDelay('op het balkon staat een kist')
+    input('Klik ENTER om de kist te openen')
+    time.sleep(2)
+    clear_console()
+    printDelay('Je opent de kist en zit een soort staff in en armor')
+    staff = input('Wil je de staff menemen Ja/Nee: ').lower()
+    if staff == 'ja':
+        specialtxt = 'Gebruik je special weapon type: Special'
+        special = random.randint(20, 30)
+    elif staff == 'nee':
+        specialtxt = 'Je hebt geen special weapons/abilities'
+    
+    armor = input('Wil je de armor meenemen Ja/Nee: ').lower()
+    if armor == 'ja':
+        armor = 50
+    elif armor == 'nee':
+        armor = 0
+        printDelay('Je laat de armor liggen')
+    printDelay('Je ziet een soort van enorme grot')
+    printDelay('Er komt een sterke aura uit de grot')
+    printDelay('Je zit 2 Rode ogen in de grot')
+    printDelay('Je duikt snel weg en gaat terug naar buiten')
 printDelay('Je bent nu weer buiten je gaat verder met het beklimmen van de berg')
 printDelay('Je bent nu boven op de berg gekomen je ziet de ingang van de grote grot')
 printDelay('SKYNRAD!!!!')
@@ -227,16 +267,19 @@ printDelay('Skynrad: Haha je bent niet sterk genoeg om mij te verslaan')
 printDelay(f'{naam}: Ik ga Jou verslaan al is het de laatste wat ik doe')
 printDelay('Skynrad: Haha kom maar op!!!!!')
 ################################################################################################
+PlayerHP  = 100 + armor
+
+
 while DeMoNHP >= 0:  # battle loop
         clear_console()
-        enemydmg = random.randint(10, 15)
+        enemydmg = random.randint(5, 15)
         print(f'''
         _______________________________________________________________________________________
         Battle:
                         {naam} Hp = {PlayerHP}            Skynrad de Demon Hp = {DeMoNHP}
 
                             Kies Aub eem van de onderste opties: Een/Twee/Drie
-                                {Attack}          ''')
+                                {Attack}        {specialtxt}                                              ''')
 
         attackchoice = input(': ').lower()
         if attackchoice == 'een':
@@ -248,11 +291,18 @@ while DeMoNHP >= 0:  # battle loop
         elif attackchoice == 'drie':
             DeMoNHP = DeMoNHP - drie
             PlayerHP = PlayerHP - enemydmg
+        elif attackchoice == 'special':
+            DeMoNHP = DeMoNHP - special
+            PlayerHP = PlayerHP - enemydmg
 
         if PlayerHP <= 0:
             input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
             sys.exit()
         if DeMoNHP <= 0:
             print('Je hebt Skynrad verslagen ')
-        break
+            break
 printDelay('Gefeliciteerd je hebt de game uitgespeeld')
+clear_console()
+time.sleep(3)
+print('LINK STOP!!!!!!!!!!!')
+sys.exit()
