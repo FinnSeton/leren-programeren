@@ -134,6 +134,7 @@ while WolfHP >= 0:  # battle loop
         sys.exit()
     if WolfHP <= 0:
         print('Je hebt je tegenstander verslagen je kan nu door lopen')
+        PlayerHP  = 100 + armor
         break
 #############################################################################################
 clear_console()
@@ -212,6 +213,7 @@ if keuze == 'aanvallen':
             sys.exit()
         if GreenGoblinHP <= 0:
             print('Je hebt je tegenstander verslagen je kan nu door ')
+            PlayerHP  = 100 + armor
             break
 ################################################################################################
     printDelay('Top die is ook weg')
@@ -262,9 +264,6 @@ printDelay('Skynrad: Haha je bent niet sterk genoeg om mij te verslaan')
 printDelay(f'{naam}: Ik ga Jou verslaan al is het de laatste wat ik doe')
 printDelay('Skynrad: Haha kom maar op!!!!!')
 ################################################################################################
-PlayerHP  = 100 + armor
-
-
 while DeMoNHP >= 0:  # battle loop
         clear_console()
         enemydmg = random.randint(5, 15)
@@ -298,6 +297,7 @@ while DeMoNHP >= 0:  # battle loop
             sys.exit()
         if DeMoNHP <= 0:
             print('Je hebt Skynrad verslagen ')
+            PlayerHP  = 100 + armor
             break
 printDelay('Gefeliciteerd je hebt de game uitgespeeld')
 clear_console()
