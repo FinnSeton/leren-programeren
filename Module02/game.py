@@ -1,28 +1,11 @@
-
-# add try exepts bij de dingen waar het fout kan gaan
-
-
-
-
-# Het is idee is dat de game een soort parodie is op swordt art online. (is een soort Vr game)
-# De game begin met dat je een avatar moet kiezen. Gender/Class/Name
-# Met elke Class komen ander Weapons.
-# De game zelf begin zo "Je wordt wakker in een vreemde wereld alles wat je ziet is dat je in een bos met een weg aan het einde van de weg zie je een kruispunt. Je kan naar links of rechts gaan. Waar ga je heen?"
-# je kiest of je links of rechts wil gaan en dan krijg je een random event. (bijvoorbeeld een monster)
-# Als je een monster verslaat kan je door naar de volgende naar ongeveer 2 mobs kom je bij de end boss (bijvoorbeeld een demon)
-# Als je de end boss verslaat kom je bij een einde van de game. (bijvoorbeeld een portal)
-# Als je de portal in gaat kom je weer terug in de echte wereld. (bijvoorbeeld een kamer met een computer)
-#
 import sys
 import random
 import os
 import time
 from turtle import clear
 
-
 def clear_console():
     os.system('cls')
-
 
 def printDelay(t: str, d=2):  # function to printDelay with delay
     time.sleep(d)
@@ -32,11 +15,6 @@ specialtxt = "Je hebt geen specials"
 armor = 0
 
 clear_console()
-
-# MOBS :
-# 1. Wolf                   | Done
-# 2. Green Goblin           | Done
-# 3. Demon | Final Boss     | Done
 
 # HP Variables:
 PlayerHP = 100
@@ -53,8 +31,6 @@ clear_console()
 printDelay('LINK START!!!!!!!!!!!')
 time.sleep(2)
 clear_console()
-###########################################################################
-
 ###########################################################################
 naam = input("Wat is uw naam: ")
 try:
@@ -93,6 +69,9 @@ try:
         een = random.randint(9999, 99999)  # Arrow
         twee = random.randint(9999, 99999)  # Piercing Arrow
         drie = random.randint(9999, 99999)  # Explosive Arrow
+        def printDelay(t: str, d=0):  # function to printDelay with delay
+            time.sleep(d)
+            print(t)
 except:
     printDelay('Je hebt een fout andwoordt gegeven bij klasse')
 ###########################################################################
@@ -104,7 +83,7 @@ start = input('Start het spel: Ja/Nee: ').lower()
 if start == 'nee':
     printDelay('Het spel is gestopt')
     raise sys.exit()
-###########################################################################
+
 elif start == 'ja':
     printDelay('Het spel is gestart.')
     printDelay('')
@@ -119,6 +98,9 @@ elif start == 'ja':
         'KUT!!!!!, de wolf heeft je gezien je moet nu wel vechten anders ga je dood.')
     printDelay('FIGHT!!!!')
     time.sleep(5)
+else:
+    printDelay('Je hebt geen geldige keuze gemaakt opnieuw starten')
+    sys.exit()
 ##############################################################################################
 PlayerHP = 100
 while WolfHP >= 0:  # battle loop
@@ -143,6 +125,9 @@ while WolfHP >= 0:  # battle loop
     elif attackchoice == 'drie':
         WolfHP = WolfHP - drie
         PlayerHP = PlayerHP - enemydmg
+    else:
+        print('Je hebt geen geldige keuze gemaakt probeer het opnieuw')
+        time.sleep(2)
 
     if PlayerHP <= 0:
         input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
@@ -177,9 +162,9 @@ printDelay('Je loopt naar binnen en je ziet een soort van trap')
 printDelay('Je loopt de trap op en je ziet een kamer')
 printDelay('Je loopt naar binnen en je ziet iets bewegen in de andere kamer')
 printDelay('Ga je het vreemde object aanvallen of ga je weg')
-keuze2 = input('Aanvallen/Weg: ').lower()
+keuze = input('Aanvallen/Weg: ').lower()
 clear_console()
-if keuze2 == 'aanvallen':
+if keuze == 'aanvallen':
     printDelay(f'{naam}: Hey wie ben jij')
     printDelay('"Het onbekende mannenetje draait om"')
     printDelay('Hij ziet er niet uit als een normale mens')
@@ -218,6 +203,9 @@ if keuze2 == 'aanvallen':
         elif attackchoice2 == 'drie':
             GreenGoblinHP = GreenGoblinHP - drie
             PlayerHP = PlayerHP - enemydmg
+        else:
+            print('Je hebt geen geldige keuze gemaakt probeer het opnieuw')
+            time.sleep(2)
 
         if PlayerHP <= 0:
             input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
@@ -240,17 +228,25 @@ if keuze2 == 'aanvallen':
         special = random.randint(20, 30)
     elif staff == 'nee':
         specialtxt = 'Je hebt geen special weapons/abilities'
-    
+    else:
+        printDelay('Verkeerde input')
+################################################################################################
     armor = input('Wil je de armor meenemen Ja/Nee: ').lower()
     if armor == 'ja':
         armor = 50
     elif armor == 'nee':
         armor = 0
         printDelay('Je laat de armor liggen')
+    else:
+        printDelay('Verkeerde input')
+################################################################################################
     printDelay('Je ziet een soort van enorme grot')
     printDelay('Er komt een sterke aura uit de grot')
     printDelay('Je zit 2 Rode ogen in de grot')
     printDelay('Je duikt snel weg en gaat terug naar buiten')
+else:
+    printDelay('Verkeerde input')
+################################################################################################
 printDelay('Je bent nu weer buiten je gaat verder met het beklimmen van de berg')
 printDelay('Je bent nu boven op de berg gekomen je ziet de ingang van de grote grot')
 printDelay('SKYNRAD!!!!')
@@ -293,6 +289,9 @@ while DeMoNHP >= 0:  # battle loop
         elif attackchoice == 'special':
             DeMoNHP = DeMoNHP - special
             PlayerHP = PlayerHP - enemydmg
+        else:
+            print('Je hebt geen geldige keuze gemaakt probeer het opnieuw')
+            time.sleep(2)
 
         if PlayerHP <= 0:
             input('Je bent dood gegaan de game is nu afgelopen klik Enter om te stoppen')
