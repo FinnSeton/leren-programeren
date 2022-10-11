@@ -245,8 +245,6 @@ if keuze == 'aanvallen':
     printDelay('Er komt een sterke aura uit de grot')
     printDelay('Je zit 2 Rode ogen in de grot')
     printDelay('Je duikt snel weg en gaat terug naar buiten')
-else:
-    printDelay('Verkeerde input')
 ################################################################################################
 printDelay('Je bent nu weer buiten je gaat verder met het beklimmen van de berg')
 printDelay('Je bent nu boven op de berg gekomen je ziet de ingang van de grote grot')
@@ -262,6 +260,7 @@ printDelay('Skynrad: Ik ben Skynrad de Demon')
 printDelay('Skynrad: Haha je bent niet sterk genoeg om mij te verslaan')
 printDelay(f'{naam}: Ik ga Jou verslaan al is het de laatste wat ik doe')
 printDelay('Skynrad: Haha kom maar op!!!!!')
+input('Klik ENTER om de battle te starten')
 ################################################################################################
 while DeMoNHP >= 0:  # battle loop
         clear_console()
