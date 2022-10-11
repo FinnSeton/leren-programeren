@@ -65,13 +65,19 @@ try:
         drie = random.randint(7, 16)  # Explosive Arrow
     # # # # # # # # # # # # # # # # # # 
     if klasse == 'debug':
-        Attack = ('Een: Dikke bonker', 'Twee: Nuke', 'Drie: Explosive Boem')
-        een = random.randint(9999, 99999)  # Arrow
-        twee = random.randint(9999, 99999)  # Piercing Arrow
-        drie = random.randint(9999, 99999)  # Explosive Arrow
-        def printDelay(t: str, d=0):  # function to printDelay with delay
-            time.sleep(d)
-            print(t)
+        password = input('Password: ')
+        if password == 'Password123':
+            Attack = ('Een: Dikke bonker', 'Twee: Nuke', 'Drie: Explosive Boem')
+            een = random.randint(9999, 99999)  # Arrow
+            twee = random.randint(9999, 99999)  # Piercing Arrow
+            drie = random.randint(9999, 99999)  # Explosive Arrow
+            def printDelay(t: str, d=0):  # function to printDelay with delay
+                time.sleep(d)
+                print(t)
+        else:
+            print('Verkeerd Password Biatch!!!!!!.')
+            time.sleep(2)
+            sys.exit()
 except:
     printDelay('Je hebt een fout andwoordt gegeven bij klasse')
 ###########################################################################
@@ -180,10 +186,9 @@ if keuze == 'aanvallen':
         f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
     printDelay(f'{naam} Ga dood Goblin')
 ################################################################################################
-
     PlayerHP = 100
     while GreenGoblinHP >= 0:  # battle loop
-        enemydmg = random.randint(10, 20)
+        enemydmg = random.randint(5, 15)
         clear_console()
         print(f'''
         _______________________________________________________________________________________
@@ -234,7 +239,7 @@ if keuze == 'aanvallen':
 ################################################################################################
     armor = input('Wil je de armor meenemen Ja/Nee: ').lower()
     if armor == 'ja':
-        armor = 50
+        armor = 100
     elif armor == 'nee':
         armor = 0
         printDelay('Je laat de armor liggen')
@@ -264,7 +269,7 @@ input('Klik ENTER om de battle te starten')
 ################################################################################################
 while DeMoNHP >= 0:  # battle loop
         clear_console()
-        enemydmg = random.randint(5, 15)
+        enemydmg = random.randint(0, 10)
         print(f'''
         _______________________________________________________________________________________
         Battle:
@@ -298,6 +303,7 @@ while DeMoNHP >= 0:  # battle loop
             PlayerHP  = 100 + armor
             break
 printDelay('Gefeliciteerd je hebt de game uitgespeeld')
+time.sleep(1)
 clear_console()
 time.sleep(3)
 print('LINK STOP!!!!!!!!!!!')
