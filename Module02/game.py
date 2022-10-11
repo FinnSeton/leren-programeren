@@ -13,7 +13,6 @@
 # Als je de end boss verslaat kom je bij een einde van de game. (bijvoorbeeld een portal)
 # Als je de portal in gaat kom je weer terug in de echte wereld. (bijvoorbeeld een kamer met een computer)
 #
-from multiprocessing.connection import wait
 import sys
 import random
 import os
@@ -74,23 +73,23 @@ except:
 try:
     klasse = input('Kies je klasse: Warrior/Mage/Archer: ')
     if klasse == 'Warrior':
-        Attack = ['Een: Slash', 'Twee: Stab', 'Drie: Punch']
+        Attack = ('Een: Slash', 'Twee: Stab', 'Drie: Punch')
         een = random.randint(10, 20)  # Slash
         twee = random.randint(5, 15)  # Stab
         drie = random.randint(3, 10)  # Punch
     if klasse == 'Mage':
-        Attack = ['Een: Fireball', 'Twee: Iceball', 'Drie: Lightning']
+        Attack = ('Een: Fireball', 'Twee: Iceball', 'Drie: Lightning')
         een = random.randint(7, 20)  # Fireball
         twee = random.randint(4, 16)  # Iceball
         drie = random.randint(5, 15)  # Lightning
     if klasse == 'Archer':
-        Attack = ['Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow']
+        Attack = ('Een: Arrow', 'Twee: Piercing Arrow', 'Drie: Explosive Arrow')
         een = random.randint(8, 17)  # Arrow
         twee = random.randint(6, 15)  # Piercing Arrow
         drie = random.randint(7, 16)  # Explosive Arrow
     # # # # # # # # # # # # # # # # # # 
     if klasse == 'debug':
-        Attack = ['Een: Dikke bonker', 'Twee: Nuke', 'Drie: Explosive Boem']
+        Attack = ('Een: Dikke bonker', 'Twee: Nuke', 'Drie: Explosive Boem')
         een = random.randint(9999, 99999)  # Arrow
         twee = random.randint(9999, 99999)  # Piercing Arrow
         drie = random.randint(9999, 99999)  # Explosive Arrow
