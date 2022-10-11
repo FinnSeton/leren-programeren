@@ -106,7 +106,6 @@ PlayerHP = 100
 while WolfHP >= 0:  # battle loop
     enemydmg = random.randint(5, 15)
     clear_console()
-    
     print(f'''
     _______________________________________________________________________________________
     Battle:
