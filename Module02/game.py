@@ -2,7 +2,6 @@ import sys
 import random
 import os
 import time
-from turtle import clear
 
 def clear_console():
     os.system('cls')
@@ -27,7 +26,6 @@ DeMoNHP = 250
 printDelay('Welkom tot de wereld van Sword Art Online.')
 input('ENTER om verder te gaan')
 clear_console()
-
 printDelay('LINK START!!!!!!!!!!!')
 time.sleep(2)
 clear_console()
@@ -308,7 +306,6 @@ printDelay('Bedankt voor het spelen van mijn game')
 printDelay('Hier heb je een twerkende among us voor de rest van je leven')
 input('Klik ENTER om de among us te zien')
 clear_console()
-among = 0
 while 1+1 == 2:
     print('''
     .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  .
