@@ -303,8 +303,12 @@ while DeMoNHP >= 0:  # battle loop
             PlayerHP  = 100 + armor
             break
 printDelay('Gefeliciteerd je hebt de game uitgespeeld')
-time.sleep(1)
+time.sleep(2)
+printDelay('Bedankt voor het spelen van mijn game')
+printDelay('Hier heb je een twerkende among us voor de rest van je leven')
+input('Klik ENTER om de among us te zien')
 clear_console()
+among = 0
 while 1+1 == 2:
     print('''
     .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  .
@@ -357,7 +361,7 @@ while 1+1 == 2:
     .    .       .   .    .   .      . .       .        t8S8888%8888S8 88t@     .     .     .       .:                 . .        .  .   .  .  .   .   .
         .     .  .   .   .        . .      .  .    .  . . .@X@88888 88@8@8 888       .    .      .   .             . . .     .  .  .     .      .  .   .  
     ''')
-    time.sleep(0.1)
+    time.sleep(0.15)
     clear_console()
     print('''
         .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  .
@@ -410,7 +414,7 @@ while 1+1 == 2:
         .    .      .    .  .  . .    . .  .        .  .   . .  8SX88@88 X888888888@8@      . .    .     .   .:.         .            .           . .    .  
         .     .     .    .        .     .  . .  .      .     . t;@8S88@8S8 8888 8Xt.                                .    . .  . . .   . .  .  .     .     
     ''')
-    time.sleep(0.1)
+    time.sleep(0.15)
     clear_console()
     print('''
         .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  . .  .  .
@@ -463,3 +467,5 @@ while 1+1 == 2:
     .    .           .   .       .           . @X8.8888 X8@%88888 @ 888888S888888X88X88888888888888S888@8:888 .88;.; .   .        .  .   . .  .    .   .
         .    .  . . .    .   .  .    .  .  . .    S X8888888888 888888888X8888 88888S888X8 88 8888S88888t8@ :;8S8Xt  .   .   .  .  .     .     .  .    .  
     ''')
+    time.sleep(0.15)
+    clear_console()
