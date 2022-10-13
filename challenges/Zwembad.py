@@ -1,9 +1,9 @@
 uitgraven = 25 #per m3
 afvoeren = 32.50 #per m3
 km = 60
-lengte = 8
-breedte = 3
-diepte = 1.5
+lengte = input('Voer de lengte in van je zwembad')
+breedte = input('Voer de breedte in van je zwembad')
+diepte = input('Voer de diepte/hoogte in van je zwembads')
 m3 = lengte * breedte * diepte
 uittot = uitgraven * m3
 aftot = afvoeren * m3
