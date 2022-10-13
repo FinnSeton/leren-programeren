@@ -1,13 +1,11 @@
 uitgraven = 25 #per m3
 afvoeren = 32.50 #per m3
 km = 60
-try:
-    lengte = input(int('Voer de lengte in van je zwembad'))
-    breedte = input(int('Voer de breedte in van je zwembad'))
-    diepte = input(int('Voer de diepte/hoogte in van je zwembads'))
-    tegeloptie = input('Wil u uw tegel Rood/Standaard/Zelf kiezen.').lower()
-except:
-    print('Verkeerde input iets is fout gegaan')
+tegelmeerpijs = 0
+lengte = input(int('Voer de lengte in van je zwembad'))
+breedte = input(int('Voer de breedte in van je zwembad'))
+diepte = input(int('Voer de diepte/hoogte in van je zwembads'))
+tegeloptie = 'Zelf kiezen'#input('Wil u uw tegel Rood/Standaard/Zelf kiezen.').lower()
 m3 = lengte * breedte * diepte
 m2 = lengte * breedte
 uittot = uitgraven * m3
