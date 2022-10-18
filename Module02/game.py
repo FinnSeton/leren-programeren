@@ -180,8 +180,7 @@ if keuze == 'aanvallen':
     printDelay(f'{naam}: Ik ben hier om Skynrad te verslaan')
     printDelay('Rango: Skynrad?')
     printDelay(f'{naam}: Ja Skynrad de Demon')
-    printDelay(
-        f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
+    printDelay(f'{naam} Ik kom hier voor de bounty op zijn hoofd en jij staat in mijn weg')
     printDelay(f'{naam} Ga dood Goblin')
 ################################################################################################
     PlayerHP = 100
