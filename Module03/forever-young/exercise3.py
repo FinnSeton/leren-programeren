@@ -1,12 +1,24 @@
 from RobotArm import RobotArm
 
-robotArm = RobotArm('exercise 1')
+robotArm = RobotArm('exercise 3')
 
 # Jouw python instructies zet je vanaf hier:
 
 
 # Na jouw code wachten tot het sluiten van de window:
-robotArm.moveRight()
 robotArm.grab()
-robotArm.moveLeft()
+robotArm.moveRight()
 robotArm.drop()
+robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveLeft()
+robotArm.grab()
+robotArm.moveRight()
+robotArm.drop()
+robotArm.moveLeft()
