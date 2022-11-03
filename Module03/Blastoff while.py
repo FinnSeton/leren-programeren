@@ -1,4 +1,5 @@
-c=0
-while c<=29:
-   c=c+1
+c=31
+while c>=1:
+   c=c-1
    print (c)
+print('LAUNCH!!!!!!!!!!!!!!!!!!!')
