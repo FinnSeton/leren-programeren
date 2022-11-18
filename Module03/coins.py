@@ -48,8 +48,3 @@ if change > 0:  # Checks if change is greater than 0
 else:
     print('done')
 print(amountReturned)
-
-while change > 0:
-    for x in payed:
-        change = change // x
-        print(f"{x} x{change}")
