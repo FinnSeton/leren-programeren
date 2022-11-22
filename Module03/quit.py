@@ -1,4 +1,4 @@
-quit = input("?")
+quit = ''
 aantalx = 0
 while quit != "quit":
     quit = input("?")
