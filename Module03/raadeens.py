@@ -1,43 +1,45 @@
-from random import randint
-import os 
-from turtle import clear
-from time import sleep
+import random
+import os
 
-punt = 0
-for i in range (20):
-    computer_numer = randint(1,1000)
-    rounds = 0
-    while rounds <= 10:
-        player_number = int(input('type een nummer tussen 1 en 1000  '))
-        if player_number < computer_numer:
-            print('>')
-        elif player_number > computer_numer:
-            print('<')
-        elif player_number == computer_numer:
-            print('correct +1 point')
-            sleep(3)
-            punt += 1
-            break
-        rounds += 1
-        print(computer_numer)
-        verschil = computer_numer - player_number
-        print(verschil)
-        if verschil <= 50:
-            if verschil <= 20:
-                print('erg warm')
-            elif verschil <= 50:
-                print('warm')
-        if verschil >= -50:
-            if verschil >= -20:
-                print('erg warm')
-            elif verschil >= -50:
-                print('warm')
-        else:
-            print('koud')
-            
+stop = False
+punten = 0
+game = 0
+while game != 20 or stop == False:
+    game =+ 1
+    nummer = random.randint(1,1000)
+    ronde = 0
+    while ronde <= 10:
+        ronde = ronde + 1
+        Gok = int(input('Gok een getal tussen 1 en 1000.'))
+        if Gok == nummer:
+            punten += 1
+            print('Goed gedaan! Je hebt 1 punt erbij!')
+            os.system('cls')
+        if nummer < Gok:
+            print('Lager')
+        elif nummer > Gok:
+            print('Hoger')
+        verschil = nummer - Gok
+        if verschil < 0:
+            verschil *- 1
+        if verschil <= 20:
+            print('Erg warm')
+        elif verschil <= 50:
+            print('Warm')
 
-    os.system('cls')
-    input('wil je nog een keer ')
-    print('volgende ronde')
+        if ronde == 10:
+            os.system('cls')
+            game += 1
+            if game < 20:
+                nogeenkeer = input('Wil je opnieuw?')
+                if nogeenkeer == 'nee':
+                    print(f'{punten} aantal punten')
+                    stop = True
+        stoppen = input('Typ quit om vervroegd te stoppen. Als je verder wilt gaan klik enter')
 
-print(punt)
+        if stoppen == 'quit':
+            print(f'Je bent met {punten} punten geëindigt en na {ronde} ronde(s) gestopt.')
+            stop = True
+
+        print(punten)    
+print(f'{punten}punten als eindstand')
