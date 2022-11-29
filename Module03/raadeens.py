@@ -16,7 +16,6 @@ while game != 20 or stop == False:
             punten += 1
             nummer = random.randint(1,1000)
             print('Goed gedaan! Je hebt 1 punt erbij!')
-            os.system('cls')
         if nummer < Gok:
             print('Lager')
         elif nummer > Gok:
@@ -30,7 +29,6 @@ while game != 20 or stop == False:
             print('Warm')
 
         if ronde == 10:
-            os.system('cls')
             game += 1
             if game < 20:
                 nogeenkeer = input('Wil je opnieuw?')
