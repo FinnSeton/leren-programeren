@@ -11,8 +11,10 @@ while game != 20 or stop == False:
     while ronde <= 10:
         ronde = ronde + 1
         Gok = int(input('Gok een getal tussen 1 en 1000.'))
+        print(nummer)
         if Gok == nummer:
             punten += 1
+            nummer = random.randint(1,1000)
             print('Goed gedaan! Je hebt 1 punt erbij!')
             os.system('cls')
         if nummer < Gok:
@@ -21,7 +23,7 @@ while game != 20 or stop == False:
             print('Hoger')
         verschil = nummer - Gok
         if verschil < 0:
-            verschil *- 1
+            verschil = verschil * -1
         if verschil <= 20:
             print('Erg warm')
         elif verschil <= 50:
