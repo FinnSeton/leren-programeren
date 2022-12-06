@@ -1,45 +1,38 @@
 import random
-import os
 
-stop = False
-punten = 0
-game = 0
-while game != 20 or stop == False:
-    game =+ 1
-    nummer = random.randint(1,1000)
-    ronde = 0
-    while ronde <= 10:
-        ronde = ronde + 1
-        Gok = int(input('Gok een getal tussen 1 en 1000.'))
-        print(nummer)
-        if Gok == nummer:
-            punten += 1
-            nummer = random.randint(1,1000)
-            print('Goed gedaan! Je hebt 1 punt erbij!')
-        if nummer < Gok:
-            print('Lager')
-        elif nummer > Gok:
-            print('Hoger')
-        verschil = nummer - Gok
-        if verschil < 0:
-            verschil = verschil * -1
-        if verschil <= 20:
-            print('Erg warm')
-        elif verschil <= 50:
-            print('Warm')
+rounds = 0
+tries = 0
+userInput = ""
+points = 0
 
-        if ronde == 10:
-            game += 1
-            if game < 20:
-                nogeenkeer = input('Wil je opnieuw?')
-                if nogeenkeer == 'nee':
-                    print(f'{punten} aantal punten')
-                    stop = True
-        stoppen = input('Typ quit om vervroegd te stoppen. Als je verder wilt gaan klik enter')
+while rounds < 20 and userInput != "quit":
+    rounds += 1
+    print(f"rounds: {rounds}")
+    randomNum = random.randint(1, 1000)
+    for i in range(1,10):
+        print(f"\ntries: {i}")
+        userInput = input("enter a whole number between 1-1000: ")
+        if userInput == "quit":
+            break
+        else:
+            userInput = int(userInput)
 
-        if stoppen == 'quit':
-            print(f'Je bent met {punten} punten geëindigt en na {ronde} ronde(s) gestopt.')
-            stop = True
+        difference = abs(randomNum - userInput)
+        if randomNum == userInput:
+            print("correct!")
+            points += 1
+            break
+        elif difference < 20 and randomNum < userInput:
+            print("wrong, you're very warm, try smaller")
+        elif difference < 20 and randomNum > userInput:
+            print("wrong, you're very warm, try bigger")
+        elif difference < 50 and randomNum < userInput:
+            print("wrong, you're warm, try smaller")
+        elif difference < 50 and randomNum > userInput:
+            print("wrong, you're warm, try bigger")
+        elif randomNum < userInput:
+            print("Wrong, try smaller")
+        else:
+            print("Wrong, try bigger")
 
-        print(punten)    
-print(f'{punten}punten als eindstand')
+print(f"\npoints: {points}")
