@@ -11,8 +11,6 @@ for a in SOORTKAART:
 
 random.shuffle(JOKER)
 
-print(JOKER)
-print(JOKER[0])
 for i in range(1,8):
     print(f"kaart {i}: {JOKER[0]}")
     JOKER.pop(0)
