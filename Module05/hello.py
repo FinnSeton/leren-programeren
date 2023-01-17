@@ -1,5 +1,6 @@
-def Text():
-    text = "Hello from function town"
-    print(text)
-    
-Text()
+def text(number: int):
+    for x in range(1, number + 1):
+        print(f"Hello from function town {x}")
+
+
+text(int(input("Geef een cijfer: ")))
