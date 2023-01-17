@@ -12,11 +12,12 @@ while meernamen == "ja":
         print("Deze naam is al ingevoerd.")
     elif naaminput not in namen:
         namen.append(naaminput)
-        random.shuffle(namen)
         if len(namen) >= 3:
             while meernamen != 'nee' and 'ja':
                 meernamen = input(
                     "Wil je nog meer namen invoeren? (ja/nee): ").lower()
+                
+random.shuffle(namen)
 
 try:
     while lootjeaantal != len(namen):
