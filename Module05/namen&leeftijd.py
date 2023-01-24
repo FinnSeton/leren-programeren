@@ -13,7 +13,7 @@ while keuze != 'stop':
     keuze = input('Toets enter om door te gaan of stop om te printen:').lower()
     if keuze == 'stop':
         x = len(list)
-        aantal = 0
-        for z in range(0, x):
+        #aantal = 0
+        for aantal in range(0, x):
             print(f'{list[aantal]["name"]} is {list[aantal]["age"]}')
-            aantal =+ 1
+            #aantal =+ 1
