@@ -1,8 +1,8 @@
 keuze = ''
 list = []
 def functie():
-        name = input('Voer een naam in? ')
-        age = input(f'Voer de leeftijd voor {name} in? ')
+        name = input('Voer een naam in? ').capitalize()
+        age = input(f'Voer de leeftijd voor {name} in? ').capitalize()
         dic = {}
         dic["name"] = name
         dic["age"] = age
