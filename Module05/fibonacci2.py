@@ -14,5 +14,4 @@ def fibonacci(nummer: int):
     elif nummer in reeks:
         print(reeks[0:reeks.index(nummer) + 1])
 
-
-fibonacci(56)
+fibonacci(34)
