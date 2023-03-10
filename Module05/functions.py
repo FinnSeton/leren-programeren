@@ -1,23 +1,43 @@
 import time
 from termcolor import colored
 from data import JOURNEY_IN_DAYS
+from data import mainCharacter
 
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    pass
+    if mainCharacter['cash']['copper'] >= 10 :
+        mainCharacter['cash']['copper'] -= 10
+        mainCharacter['cash']['silver'] += 1
 
 def silver2gold(amount:int) -> float:
-    pass
+    if mainCharacter['cash']['silver'] >= 5 :
+        mainCharacter['cash']['silver'] -= 5
+        mainCharacter['cash']['gold'] += 1
 
 def copper2gold(amount:int) -> float:
-    pass
+    if mainCharacter['cash']['copper'] >= 100 :
+        mainCharacter['cash']['copper'] -= 100
+        mainCharacter['cash']['gold'] += 1
 
 def platinum2gold(amount:int) -> float:
-    pass
+    if mainCharacter['cash']['platinum'] == 1 :
+        mainCharacter['cash']['platinum'] -= 1
+        mainCharacter['cash']['gold'] += 25
 
 def getPersonCashInGold(personCash:dict) -> float:
-    pass
+    
+    
+    plattocash = mainCharacter['cash']['platinum'] * 25
+    goldtocash = mainCharacter['cash']['copper'] / 50
+    silvtocash = mainCharacter['cash']['silver'] / 5
+    
+    personCash = plattocash + goldtocash + silvtocash
+    
+    
+    
+    
+    
 
 ##################### M04.D02.O4 #####################
 
