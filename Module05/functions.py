@@ -1,53 +1,43 @@
 import time
 from termcolor import colored
-from data import JOURNEY_IN_DAYS
-from data import mainCharacter
+from data import *
 
 ##################### M04.D02.O2 #####################
 
 def copper2silver(amount:int) -> float:
-    if mainCharacter['cash']['copper'] >= 10 :
-        mainCharacter['cash']['copper'] -= 10
-        mainCharacter['cash']['silver'] += 1
+    return round(amount / 10, 2)
 
 def silver2gold(amount:int) -> float:
-    if mainCharacter['cash']['silver'] >= 5 :
-        mainCharacter['cash']['silver'] -= 5
-        mainCharacter['cash']['gold'] += 1
+    return round(amount / 5, 2)
 
 def copper2gold(amount:int) -> float:
-    if mainCharacter['cash']['copper'] >= 100 :
-        mainCharacter['cash']['copper'] -= 100
-        mainCharacter['cash']['gold'] += 1
+    return round(silver2gold(copper2silver(amount)), 2)
 
 def platinum2gold(amount:int) -> float:
-    if mainCharacter['cash']['platinum'] == 1 :
-        mainCharacter['cash']['platinum'] -= 1
-        mainCharacter['cash']['gold'] += 25
+    return round(amount * 25, 2)
 
 def getPersonCashInGold(personCash:dict) -> float:
-    
-    
-    plattocash = mainCharacter['cash']['platinum'] * 25
-    goldtocash = mainCharacter['cash']['copper'] / 50
-    silvtocash = mainCharacter['cash']['silver'] / 5
-    
-    personCash = plattocash + goldtocash + silvtocash
-    
-    
-    
-    
-    
+    gold = 0
+    gold += platinum2gold(personCash['platinum'])
+    gold += personCash['gold']
+    gold += silver2gold(personCash['silver'])
+    gold += copper2gold(personCash['copper'])
+    return gold
 
 ##################### M04.D02.O4 #####################
 
 def getJourneyFoodCostsInGold(people:int, horses:int) -> float:
-    pass
+    return round(copper2gold(((people*4) + (horses *3)) * JOURNEY_IN_DAYS),2)
 
 ##################### M04.D02.O5 #####################
 
 def getFromListByKeyIs(list:list, key:str, value:any) -> list:
-    pass
+
+    returnlist = []
+    for entry in list:
+        if key in list == value:
+            returnlist.append(list[entry])
+            return returnlist
 
 def getAdventuringPeople(people:list) -> list:
     pass
@@ -117,6 +107,7 @@ def getEarnigs(profitGold:float, mainCharacter:dict, friends:list, investors:lis
 ##################### view functions #####################
 def print_colorvars(txt:str='{}', vars:list=[], color:str='yellow') -> None:
     vars = map(lambda string, color=color: colored(str(string), color, attrs=['bold']) ,vars)
+    time.sleep(0.5)
     print(txt.format(*vars))
 
 def print_title(name:str) -> None:
